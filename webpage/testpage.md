@@ -1,3 +1,3 @@
 # this is a test page
 
-[a relative link to home](README.md)
+[a relative link to home](index.md)
