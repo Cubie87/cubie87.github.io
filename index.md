@@ -17,4 +17,6 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 [2022 - Flashing a Cisco AP](posts/2022-ciscoWAP/ciscoWAP.md)
 
+[2023 - Rooting a Technicolor Gateway](posts/2023-technicolor/technicolor.md)
+
 [2023 - Blog Writing](posts/2023-blogwriting/blogwriting.md)

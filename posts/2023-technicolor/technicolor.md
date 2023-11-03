@@ -40,7 +40,7 @@ The firmware version for the gateway I had was `20.3.c.0501-MR22.1-RA` (Type III
 
 Step 1 is to set up TFTP so that BOOTP mode will grab the firmware file and flash.
 
-### TFTPd Setup
+#### TFTPd Setup
 
 This was also quite painful, mostly due to my use of of the same config file from a previous project, causing issues with it not working properly. If you do this, I highly recommend using a fresh download. The tftp server I used was [tftpd64](https://pjo2.github.io/tftpd64/).
 
@@ -52,7 +52,7 @@ Restart the tftp server as required. Allow through firewall (both public and pri
 
 Notable with the tftp server configuration was a quirk I had experienced. When the ethernet cable was disconnected, the ethernet interface would not request a DHCP address, resulting in no IP being assigned, and the selected interface resetting to loopback (127.0.0.1). To rememdy this, I connected it to another computer, hence forcing the DHCP server to hand out appropriate addresses, and locking the "Server interfaces" to the correct interface. After this, I connected it to the modem and flashed the firmware.
 
-### BOOTP mode
+#### BOOTP mode
 
 BOOTP is an older version of DHCP, and is used by these gateways when flashing firmware over tftp. To put a DJA0231 into bootp mode,
 
