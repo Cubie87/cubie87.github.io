@@ -1,8 +1,10 @@
 # basic details
-title: Cubie's Site 
-author: Cubie
-#email: 
-#description:
+title: Cubie's Site
+author:
+  name: Cubie
+  email: "testemailhere"
+  
+  
 github_username: cubie87
 #linkedin_username: 
 #stackoverflow_username:
@@ -22,9 +24,12 @@ plugins:
   - jekyll-titles-from-headings # remove double titles on pages
 
 
-# dark mode skin
+# minima config
 minima:
-  skin: dark
+  skin: dark # dark mode
+  social_links: # social medias
+    - { platform: github,  user_url: "https://github.com/Cubie87" }
+#    - { platform: twitter, user_url: "https://twitter.com/jekyllrb" }
 
 
 # remove double titles on pages
