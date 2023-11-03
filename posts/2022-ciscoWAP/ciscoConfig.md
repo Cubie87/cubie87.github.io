@@ -6,9 +6,11 @@ The AP's current IP can be found through the DHCP server on your router.
 
 ## Connect to AP
 
-Connect to the AP using telnet
+Connect to the AP using telnet. Your AP might have a different IP
 
-`telnet [ip here]`
+```bash
+telnet 192.168.1.182
+```
 
 Login with Cisco/Cisco
 
@@ -118,7 +120,7 @@ ap(config)#
 I find it really interesting that Cisco uses `no shutdown` as the command to turn on an interface, but I guess it makes sense given that `shutdown` shuts down that interface
 
 
-#### Save Configuration
+## Save Configuration
 
 Please remember to do this step, otherwise the AP will reset to default when it is power cycled.
 
