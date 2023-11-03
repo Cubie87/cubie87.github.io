@@ -8,4 +8,5 @@ My projects thus far include [Pandora](https://github.com/Cubie87/Pandora), a di
 
 ## Blog
 
-Blog posts to come... (don't hold your breath)
+
+[2022 - Flashing a Cisco AP](webpage/2022-ciscoWAP/ciscoWAP.md)
