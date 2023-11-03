@@ -29,6 +29,6 @@ minima:
 
 # remove double titles on pages
 titles_from_headings:
-  enabled:     true
+  enabled:     false
   strip_title: false
   collections: false
