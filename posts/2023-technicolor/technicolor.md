@@ -166,3 +166,10 @@ Download from seud0nym's [tch-gui-unhide repo](https://github.com/seud0nym/tch-g
 
 I left most options as default, but changed the theme to dark mode (DARK MODE EVERYTHING!!!!) (`-tn`)
 
+#### Other Shell Scripts
+
+Also just for fun, I ran a screenfetch program (ufetch), just for fun. Turns out, the OS is based on OpenWRT running linux!
+
+BCM963138 Chipset running Linux 4.1.52 (OpenWRT Snapshot release) with ash shell.
+
+![ufetch](fetch.png)
