@@ -29,10 +29,13 @@ The Cisco APs can be made to force flash their firmware version. Note that 802.1
 To flash firmware, download a tftp server (I used [tftpd64](https://pjo2.github.io/tftpd64/)) and point the tftp server at a directory that contains `ap3g2-k9w7-tar.default`.
 
 Change your computer's IP to `10.0.0.20`.
-![IP Settings](ipset.png)
-Rename your firmware file to `ap3g2-k9w7-tar.default`
-Start a tftp server, pointing the Base Directory to be the one containing the firmware file `ap3g2-k9w7-tar.default`
 
+
+![IP Settings](ipset.png)
+
+Rename your firmware file to `ap3g2-k9w7-tar.default`
+
+Start a tftp server, pointing the Base Directory to be the one containing the firmware file `ap3g2-k9w7-tar.default`
 
  - Press and hold the MODE button on the AP.
  - Plug in the AP.
