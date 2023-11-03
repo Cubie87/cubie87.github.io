@@ -4,7 +4,7 @@ Hello! Welcome to my little corner of the internet. This is a little test websit
 
 I'm a university student studying _nerd_ subjects, and have an interest in such.
 
-I'm a datahoarder, with a 16TB server running on TrueNAS Scale.
+I'm a datahoarder, with a 16TB storage server running on TrueNAS Scale.
 
 I run a compute server which hosts [Pandora](https://github.com/Cubie87/Pandora), PiHole, a TailScale node, and occasionally minecraft servers.
 

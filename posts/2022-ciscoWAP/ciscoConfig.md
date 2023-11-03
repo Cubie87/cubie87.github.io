@@ -136,7 +136,7 @@ When prompted with Destination filename (`Destination filename [startup-config]?
 
 
 
-#### Back Up Configuration
+## Back Up Configuration
 
 To back up these configuration changes, you can copy the running config to your local machine over tftp. 
 
@@ -149,7 +149,7 @@ ap#copy running-config tftp://192.168.1.111/destFileName
 ```
 
 
-#### Restore Configuration
+## Restore Configuration
 
 Restoring a config is similar to backing it up, but this time it is reversed. Again, remember to change the IP and filename to the correct one for you.
 
