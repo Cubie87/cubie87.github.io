@@ -46,6 +46,8 @@ This was also quite painful, mostly due to my use of of the same config file fro
 
 Ensure that DHCP is enabled on the ethernet port that will be used. Leave the modem off for this step.
 
+Please make sure your settings match these. Note that the tftp setting's base directory has to be `.`, it did not work with anything else there (spent several hours wondering why, reinstalled with fresh config file and it worked first try)
+
 ![tftpGlobalConfig](tftpGLOBAL.png)
 
 Restart the tftp server as required. Allow through firewall (both public and private networks).
