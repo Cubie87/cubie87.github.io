@@ -1,11 +1,11 @@
 # basic details
-#title: 
+title: Cubie's Site 
+author: Cubie
 #email: 
 #description:
 #github_username: 
 #linkedin_username: 
-#stackoverflow_username: 
-author: Cubie
+#stackoverflow_username:
 
 # theme
 remote_theme: jekyll/minima
