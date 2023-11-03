@@ -5,7 +5,7 @@
 #linkedin_username: 
 #stackoverflow_username: 
 
-remote_theme: jekyll/minima@3cdd14d
+remote_theme: jekyll/minima
 show_excerpts: true
 
 
