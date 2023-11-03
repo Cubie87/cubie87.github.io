@@ -19,6 +19,8 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 [2022 - Cisco AP Setup](posts/2022-ciscoWAP/ciscoConfig.md)
 
+[2023 - VISCA over IP](posts/2023-viscaip/viscaOverIP.md)
+
 [2023 - Rooting a Technicolor Gateway](posts/2023-technicolor/technicolor.md)
 
 [2023 - Blog Writing](posts/2023-blogwriting/blogwriting.md)
