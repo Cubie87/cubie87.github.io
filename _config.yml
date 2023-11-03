@@ -2,7 +2,7 @@
 title: Cubie's Site
 author:
   name: Cubie
-  email: "testemailhere"
+#  email: "testemailhere"
   
   
 github_username: cubie87
@@ -20,6 +20,7 @@ header_pages:
 
 # plugins for the theme
 plugins:
+  - jekyll-feed
   - jekyll-remote-theme # dark mode theme
   - jekyll-titles-from-headings # remove double titles on pages
 
