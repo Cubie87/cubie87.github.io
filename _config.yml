@@ -1,1 +1,8 @@
-remote_theme: lewismiddleton/cayman-dark
+theme: minima
+# dark theme
+minima:
+  skin: dark
+# header pages
+header_pages:
+  - index.md
+#  - portfolio.md
