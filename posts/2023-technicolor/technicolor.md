@@ -168,8 +168,27 @@ I left most options as default, but changed the theme to dark mode (DARK MODE EV
 
 #### Other Shell Scripts
 
-Also just for fun, I ran a screenfetch program (ufetch), just for fun. Turns out, the OS is based on OpenWRT running linux!
+Also just for fun, I ran a screenfetch program (ufetch). Turns out, the OS is based on OpenWRT running linux!
 
 BCM963138 Chipset running Linux 4.1.52 (OpenWRT Snapshot release) with ash shell.
 
 ![ufetch](fetch.png)
+
+Also as a fun exerp, this is the splash screen when ssh'ing in. I'm yet to try this signature drink, but will update here if I ever do.
+
+```bash
+BusyBox v1.31.1 () built-in shell (ash)
+
+  _______              __           __              __
+ |_     _|.-----.----.|  |--.-----.|__|.----.-----.|  |.-----.----.
+   |   |  |  -__|  __||     |     ||  ||  __|  _  ||  ||  _  |   _|
+   |___|  |_____|____||__|__|__|__||__||____|_____||__||_____|__|
+                 N E X T   G E N E R A T I O N   G A T E W A Y
+ --------------------------------------------------------------------
+ NG GATEWAY SIGNATURE DRINK
+ --------------------------------------------------------------------
+  * 1 oz Vodka          Pour all ingredients into mixing
+  * 1 oz Triple Sec     tin with ice, strain into glass.
+  * 1 oz Orange juice
+ --------------------------------------------------------------------
+```
