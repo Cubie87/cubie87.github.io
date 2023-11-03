@@ -1,4 +1,4 @@
-# Cubie's Github Pages
+# Home
 
 Hello! Welcome to my little corner of the internet. This is a little test website/blog to document my random thoughts/experiments, both for your viewing/enjoyment, but also for me to look back on in the future.
 

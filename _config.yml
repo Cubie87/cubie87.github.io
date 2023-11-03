@@ -1,5 +1,18 @@
-theme: minima
-# dark theme
+#title: 
+#email: 
+#description:
+#github_username: 
+#linkedin_username: 
+#stackoverflow_username: 
+
+remote_theme: jekyll/minima@3cdd14d
+show_excerpts: true
+
+
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+
 minima:
   skin: dark
 # header pages
