@@ -22,7 +22,7 @@ The firmware being run by these gateways are catergorised into 3 different types
  - Type II
  - Type III
 
-Type I firmware can be flashed through the web UI, uploading a (valid) firmware file, and the gateway will do the flashing for you. This can be used to get the bogatewayx to run type II firmware.
+Type I firmware can be flashed through the web UI, uploading a (valid) firmware file, and the gateway will do the flashing for you. This can be used to get the gateway to run type II firmware.
 
 Type II firmware are the onle type vulnerable to exploits, used to enable root access and thus unlock functionality.
 
