@@ -1,3 +1,4 @@
+# basic details
 #title: 
 #email: 
 #description:
@@ -6,18 +7,28 @@
 #stackoverflow_username: 
 author: Cubie
 
-
+# theme
 remote_theme: jekyll/minima
-show_excerpts: true
 
 
-plugins:
-  - jekyll-feed
-  - jekyll-remote-theme
-
-minima:
-  skin: dark
 # header pages
 header_pages:
   - index.md
-#  - portfolio.md
+
+
+# plugins for the theme
+plugins:
+  - jekyll-remote-theme # dark mode theme
+  - jekyll-titles-from-headings # remove double titles on pages
+
+
+# dark mode skin
+minima:
+  skin: dark
+
+
+# remove double titles on pages
+titles_from_headings:
+  enabled:     true
+  strip_title: false
+  collections: false
