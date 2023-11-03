@@ -1,4 +1,4 @@
-# Cisco WAP Flashing
+# Flashing a Cisco AP
 
 Flashing a cisco wireless access point (AP). These are often available at enterprise auctions or online sources.
 
