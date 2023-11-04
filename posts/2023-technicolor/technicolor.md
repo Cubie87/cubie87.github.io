@@ -12,7 +12,15 @@ I've done the Type II procedure previously, likely in late 2020 or early 2021, b
 
 ### Notes Before we Begin
 
-DJA0231 has two "banks" of firmware, which can be thought of as two partitions. From my understanding, Bank I contains a clean/backup "factory default" version of the firmware, and Bank II contains the one that is loaded and run. When a factory reset is performed, the gateway copies data from Bank I to Bank II, then boots from Bank II. There's more nuiance here regarding how factory reset affects banks and switching between the two, and it's best to refer to [the "official(?)" guide](https://hack-technicolor.readthedocs.io/en/stable/Recovery/#change-booted-bank) for more information about this.
+#### "Partition" Layout
+
+DJA0231 has two "banks" of firmware, which can be thought of as two partitions. ~~From my understanding, Bank I contains a clean/backup "factory default" version of the firmware, and Bank II contains the one that is loaded and run. When a factory reset is performed, the gateway copies data from Bank I to Bank II, then boots from Bank II. There's more nuiance here regarding how factory reset affects banks and switching between the two, and it's best to refer to [the "official(?)" guide](https://hack-technicolor.readthedocs.io/en/stable/Recovery/#change-booted-bank) for more information about this.~~
+
+I've done more reading on this, and my previous explaination is wrong (see: [explaination](https://hack-technicolor.readthedocs.io/en/stable/Resources/))
+
+Basically, there's two banks of firmware, when booting, it'll copy(?) the firmware of one of those banks into a third partition, and mount it as root `/`. It then loads the config file, stored separately again (4th partition), into runtime. Of course, linux being linux, there's _yet another_ partition to store the boot loader, so if you're keeping count, that's 5 partitions already! I'm not exactly sure if "partition" is the correct word here either, but that's a brief overview of the storage structure.
+
+
 
 #### Firmware Types
 
@@ -194,3 +202,30 @@ BusyBox v1.31.1 () built-in shell (ash)
   * 1 oz Orange juice
  --------------------------------------------------------------------
 ```
+
+## Upgrading Firmware Whilst Keeping Root
+
+Now that we've rooted the gateway, we can re-upgrade it to a newer version whilst keeping root access.
+
+Copy the `.rbi` file onto the gateway, move it to `/tmp/new.rbi`, and extract using
+
+```bash
+cat "/tmp/new.rbi" | (bli_parser && echo "Please wait..." && (bli_unseal | dd bs=4 skip=1 seek=1 of="/tmp/new.bin"))
+```
+
+The script might take a while, the cpu isn't very powerful. Furthermore, it forced a modem restart when I was attempting, which is apparently a RAM issue
+
+To remedy, I substituted `/tmp/` for a USB (`/mnt/usb/USB-A1/`), and re-ran the script
+
+```bash
+cat "/mnt/usb/USB-A1/new.rbi" | (bli_parser && echo "Please wait..." && (bli_unseal | dd bs=4 skip=1 seek=1 of="/tmp/new.bin"))
+```
+
+How does this help? I have no idea! Maybe it uses some of the USB as a swap partition?
+
+Anyways trying that also yields a crash. I may revisit this another time, but I'm done here for now.
+
+
+
+
+
