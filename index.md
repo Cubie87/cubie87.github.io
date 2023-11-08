@@ -24,3 +24,5 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 [2023 - Rooting a Technicolor Gateway](posts/2023-technicolor/technicolor.md)
 
 [2023 - Blog Writing](posts/2023-blogwriting/blogwriting.md)
+
+[2023 - Framework Laptop](posts/2023-frameworkLaptop/frameworkLaptop.md)
