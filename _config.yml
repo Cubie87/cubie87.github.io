@@ -1,26 +1,39 @@
-# theme
-remote_theme: kitian616/jekyll-TeXt-theme
-
-text_skin: dark # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
-
-
 # basic details
 title: Cubie's Site
-description: > # this means to ignore newlines until "Language & timezone"
-  Home to mindless ramblings and interesting notes.
 author:
   name: Cubie
 #  email: "testemailhere"
+  
+  
+github_username: cubie87
+#linkedin_username: 
+#stackoverflow_username:
+
+# theme
+remote_theme: jekyll/minima
 
 
-paths:
-  root    : # title link url, "/" (default)
-  #home    : # home layout url, "/" (default)
+# header pages
+header_pages:
+  - index.md
 
 
-repository: Cubie87/cubie87.github.io
-repository_tree: master
+# plugins for the theme
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme # dark mode theme
+  - jekyll-titles-from-headings # remove double titles on pages
 
 
-# Maths 
-mathjax: # false (default), true
+# minima config
+minima:
+  skin: dark # dark mode
+  social_links: # social medias
+    - { platform: github,  user_url: "https://github.com/Cubie87" }
+
+
+# remove double titles on pages
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: false
