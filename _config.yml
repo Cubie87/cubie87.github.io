@@ -10,31 +10,10 @@ github_username: cubie87
 #stackoverflow_username:
 
 # theme
-remote_theme: jekyll/minima
+remote_theme: abhinavs/moonwalk
 
 
 # header pages
 header_pages:
   - index.md
 
-
-# plugins for the theme
-plugins:
-  - jekyll-feed
-  - jekyll-remote-theme # dark mode theme
-  - jekyll-titles-from-headings # remove double titles on pages
-
-
-# minima config
-minima:
-  skin: dark # dark mode
-  social_links: # social medias
-    - { platform: github,  user_url: "https://github.com/Cubie87" }
-#    - { platform: twitter, user_url: "https://twitter.com/jekyllrb" }
-
-
-# remove double titles on pages
-titles_from_headings:
-  enabled:     true
-  strip_title: true
-  collections: false
