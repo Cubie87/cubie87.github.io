@@ -1,19 +1,26 @@
+# theme
+remote_theme: kitian616/jekyll-TeXt-theme
+
+text_skin: dark # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
+
+
 # basic details
 title: Cubie's Site
+description: > # this means to ignore newlines until "Language & timezone"
+  Home to mindless ramblings and interesting notes.
 author:
   name: Cubie
 #  email: "testemailhere"
-  
-  
-github_username: cubie87
-#linkedin_username: 
-#stackoverflow_username:
-
-# theme
-remote_theme: liamg/jekyll-theme-abysm
 
 
-# header pages
-header_pages:
-  - index.md
+paths:
+  root    : # title link url, "/" (default)
+  #home    : # home layout url, "/" (default)
 
+
+repository: Cubie87/cubie87.github.io
+repository_tree: master
+
+
+# Maths 
+mathjax: # false (default), true
