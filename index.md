@@ -6,7 +6,7 @@ I'm a university student studying _nerd_ subjects, and have an interest in such.
 
 I'm a datahoarder, with a 16TB storage server running on TrueNAS Scale.
 
-I run a compute server which hosts [Pandora](https://github.com/Cubie87/Pandora), PiHole, a TailScale node, and occasionally minecraft servers.
+I run a compute server which hosts [Pandora](posts/pandora/pandora.md), PiHole, a TailScale node, and occasionally minecraft servers.
 
 I've also written a very basic, poorly implemented, [Rocket Flight Computer](https://github.com/Cubie87/L2RocketSoftware) using the Arduino IDE on a Teensy board to log data for a Tripoli Level 2 Certification Flight. 
 
