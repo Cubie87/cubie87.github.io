@@ -10,7 +10,7 @@ github_username: cubie87
 #stackoverflow_username:
 
 # theme
-remote_theme: abhinavs/moonwalk
+remote_theme: liamg/jekyll-theme-abysm
 
 
 # header pages
