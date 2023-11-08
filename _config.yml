@@ -31,6 +31,8 @@ minima:
   social_links: # social medias
     - { platform: github,  user_url: "https://github.com/Cubie87" }
 
+# maths
+mathjax: true
 
 # remove double titles on pages
 titles_from_headings:
