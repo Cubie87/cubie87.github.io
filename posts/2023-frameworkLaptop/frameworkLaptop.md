@@ -96,7 +96,7 @@ Adding tape to these two areas (black arrow)
 
 (Image Credit to Framework's [Support](https://guides.frame.work/Guide/Touchpad+Replacement+Guide/90))
 
-I used one layer of electical tape, and one of a generic sticker (totalling to around 0.32mm of added thickness), which was enough for my laptop. This manufacturing tolerance will vary, so different materials may be needed for your laptop, if you choose to do this. Furthermore, I don't recommend electrical tape on the top layer, as the slight rubber quality to the tape makes it stick, creating a fake "click" as the tab un-adheres from the tape.
+I used one layer of electical tape, and one of a generic sticker (totalling to around ~~0.32mm~~ 0.22mm of added thickness (reduced thickness due to minor issues)), which was enough for my laptop. This manufacturing tolerance will vary, so different materials may be needed for your laptop, if you choose to do this. Furthermore, I don't recommend electrical tape on the top layer, as the slight rubber quality to the tape makes it stick, creating a fake "click" as the tab un-adheres from the tape.
 
 ![Trackpad Tape Mod 1](trackpadModded.png)
 
