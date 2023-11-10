@@ -70,6 +70,14 @@ All functionality with the Dell WD19TB dock works without issue. Note that the d
 
 Note that TB Daisychaining has not been tested, ~~nor has using that downstream TB port as a display output.~~ Using the Downstream TB port as a display output does _not_ work.
 
+#### General USB 4 Thoughts
+
+USB 4 has a bunch of "optional" features from Thunderbolt that _can_ be implemented. I'm still unsure as to exactly which ones are implemented in the FW.
+
+Furthermore, I've found that the the left USB 4 port is able to output display on HDMI and DisplayPort on the WD19TB, but is unable to do Dual DisplayPort (DP + DP over USBC). Using the Thunderbolt Passthrough for DisplayPort also sometimes works, but sometimes doesn't, and when it does work, it causes the DP display (not type c) to flicker quite a lot.
+
+On the right USB 4 port, it's easily able to do Dual DIsplayPort (DP + DP over USBC) without issue.
+
 #### PCIe Passthrough
 
 Unfortunately, when testing with the Aorus Gaming Box (1070), the Framework laptop did not detect a new device being plugged in (no windows "new device sound"), and indeed did not charge from the Gaming Box either. Notable is a lack of drivers that I have installed for the gaming box (mixing AMD and NVidia probably isn't the best idea, and I don't intend to use it in this state anyway), so that may contribute to the non-functionality, but I would still expect that Windows detects the new device.
@@ -114,6 +122,7 @@ When I run the laptop docked, I have the lid shut, and use the two monitors I ha
 The laptop hinge is.... alright. It's _very_ springy, and not very well built. I _think_ it's over-tensioned which results in the the springy action. It's interesting, and could be thought of as a mass sprint damper system, though rotationally rather than lineally. Having a high $k$ value with a low $c$ value is most of the issue, though as I say this, I don't have a fix for it. 
 
 As far as I can tell, Macs have insanely high $c$ values with a low $k$ value, resulting in a stiff ish hinge (mostly through the damper action, as opposed to spring action).
+
 
 
 More thoughts to come...
