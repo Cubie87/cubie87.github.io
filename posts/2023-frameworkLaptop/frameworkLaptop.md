@@ -74,9 +74,9 @@ Note that TB Daisychaining has not been tested, ~~nor has using that downstream 
 
 USB 4 has a bunch of "optional" features from Thunderbolt that _can_ be implemented. I'm still unsure as to exactly which ones are implemented in the FW.
 
-Furthermore, I've found that the the left USB 4 port is able to output display on HDMI and DisplayPort on the WD19TB, but is unable to do Dual DisplayPort (DP + DP over USBC). Using the Thunderbolt Passthrough for DisplayPort also sometimes works, but sometimes doesn't, and when it does work, it causes the DP display (not type c) to flicker quite a lot.
+Furthermore, I've found that the the left USB 4 port is able to output display on HDMI and DisplayPort on the WD19TB, but using the Thunderbolt Passthrough for DisplayPort also sometimes works. Sometimes, it doesn't work, and when it does work, sometimes the DP display (not type c) to flickers quite a lot.
 
-On the right USB 4 port, it's easily able to do Dual DIsplayPort (DP + DP over USBC) without issue.
+On the right USB 4 port, it's easily able to do Dual DisplayPort (DP + DP over TB Passthrough) without issue.
 
 #### PCIe Passthrough
 
