@@ -114,7 +114,13 @@ This makes it feel much closer to the Macbook's Force Touch/Electro-vibratory tr
 
 #### Lid Closed Thermals
 
-When I run the laptop docked, I have the lid shut, and use the two monitors I have on my desk as the primary display outputs. I had heard issues with the Framework laptop having thermal issues with the lid shut, but I'm happy to report that the hinge gap is large enough for thermal exhaust to exit without issue. On a prolonged Cinebench run, the CPU peaked around 85 degrees C, settling down around 75 degrees. I have not repasted, and likely won't for quite a while.
+When I run the laptop docked, I have the lid shut, and use the two monitors I have on my desk as the primary display outputs. I had heard issues with the Framework laptop having thermal issues with the lid shut, but I'm happy to report that the hinge gap is large enough for thermal exhaust to exit without issue. On a prolonged Cinebench run, the CPU peaked around 92 degrees C, settling down around 85 degrees. I have not repasted, and likely won't for quite a while.
+
+Notably, the hinge gap on the bottom of the laptop exhaust the hot air almost directly downwards, which isn't great when the laptop is sitting on a table flat. I've been using 2 sticks of DDR3 RAM to prop up my XPS when it's being docked, but the Framework Laptop's feet are much closer to the center of the laptop than the XPS, as is the hinge exhaust vent, so a new solution is needed. 
+
+I ended up measuring and drawing up a 3D printable "stand" for the FW laptop, which just props up the back for more intake and exhaust distance. Notably is that I wanted to separate the exhaust from the intake air to ensure that they don't mix (having hot exhaust be re-used as intake isn't great, like, it's ok if it happens, but you should avoid it), so it was a solid piece, and has a groove cut into it so the FW Laptop's rubber feet will sit nicely in the groove. It's width is designed to not interfere with intake and exhaust, and has sloped sides so the only thing that the stand is contacting is the laptop's feet.
+
+If you wanna print your own, feel free to use [the CAD model here](FWlaptopProp.stl). I've just stuck it to my table using tack, but double sided tape would also work (note be careful about how removable your solution is).
 
 
 #### Laptop Hinge
