@@ -3,8 +3,6 @@ title: Cubie's Site
 author:
   name: Cubie
 #  email: "testemailhere"
-
-
 github_username: cubie87
 
 # theme
@@ -19,15 +17,8 @@ header_pages:
 # plugins for the theme
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme # dark mode theme
+  - jekyll-remote-theme # required for remote_theme definition
   - jekyll-titles-from-headings # remove double titles on pages
-
-
-# minima config
-minima:
-  skin: dark # dark mode
-  social_links: # social medias
-    - { platform: github,  user_url: "https://github.com/Cubie87" }
 
 
 # remove double titles on pages
@@ -44,4 +35,7 @@ defaults:
     values:
       include:
         - "_includes"
-      feed_only: false
+
+
+sass:
+  style: compressed
