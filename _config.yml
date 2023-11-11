@@ -27,6 +27,13 @@ titles_from_headings:
   strip_title: true
   collections: false
 
+minima:
+  skin: dark # dark mode
+  social_links: # social medias
+    - { platform: github,  user_url: "https://github.com/Cubie87" }
+  stylesheet: "/assets/main.scss"  # Add this line
+
+
 
 defaults:
   -
@@ -35,7 +42,3 @@ defaults:
     values:
       include:
         - "_includes"
-
-
-sass:
-  style: compressed
