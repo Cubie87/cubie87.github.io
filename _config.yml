@@ -23,6 +23,7 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme # dark mode theme
   - jekyll-titles-from-headings # remove double titles on pages
+  - jekyll-katex # latex formatting???
 
 
 # minima config
