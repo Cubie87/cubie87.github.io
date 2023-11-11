@@ -1,0 +1,26 @@
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "dark"
+
+
+
+locale: "en-US"
+title: "Cubie's Site"
+title_separator: "-"
+name: "Cubie"
+description: "A little corner of the internet"
+
+
+author:
+  name             : "Cubie"
+#  bio              : "I have no idea"
+#  location         : "Somewhere"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Cubie87"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Cubie87"
