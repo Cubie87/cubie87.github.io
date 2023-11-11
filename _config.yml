@@ -6,7 +6,7 @@ author:
 github_username: cubie87
 
 # theme
-remote_theme: jekyll/minima
+theme: minima
 
 
 # header pages
@@ -17,7 +17,6 @@ header_pages:
 # plugins for the theme
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme # required for remote_theme definition
   - jekyll-titles-from-headings # remove double titles on pages
 
 
@@ -31,14 +30,3 @@ minima:
   skin: dark # dark mode
   social_links: # social medias
     - { platform: github,  user_url: "https://github.com/Cubie87" }
-  stylesheet: "/assets/main.scss"  # Add this line
-
-
-
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      include:
-        - "_includes"
