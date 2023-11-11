@@ -60,7 +60,7 @@ The build of the chassis as a whole is phenomenal, aluminium parts, though the g
 
 The black plastics and brass insets for screws can be plainly seen (photo credit to Framework Team at [Support](https://guides.frame.work/Guide/Bottom+Cover+Replacement+Guide/107)).
 
-Overall though, this doesn't impact rigidity, and it's on par with my XPS 17, and only slightly behing the Macbook Pro 2015.
+Overall though, this doesn't impact rigidity, and it's on par with my XPS 17, and only slightly behind the Macbook Pro 2015.
 
 The screen however, is a different issue. In all the video reviews, you can see how one side of the screen would be slanted from the other, and that remains a constant in my model. The screen rigidity is abysmal when compared to the rest of the chassis, likely due to the removable bezel. This is also likely why keyboard marks on the screen was very common with the glossy display. Hopefully taking care with it in my bag and having the matte display will let me avoid this.
 
@@ -68,7 +68,7 @@ The screen however, is a different issue. In all the video reviews, you can see 
 
 All functionality with the Dell WD19TB dock works without issue. Note that the dock firmware is on `01.00.32, 01.00.16` (Released on 25 May, 2023), and you may have a different experience on different versions. 
 
-Note that TB Daisychaining has not been tested, ~~nor has using that downstream TB port as a display output.~~ Using the Downstream TB port as a display output does _not_ work.
+Note that TB Daisychaining has not been tested, ~~nor has using that downstream TB port as a display output.~~ 
 
 #### General USB 4 Thoughts
 
