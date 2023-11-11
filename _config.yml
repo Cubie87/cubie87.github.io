@@ -1,42 +1,42 @@
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "dark"
-
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-
-
-locale: "en-US"
-title: "Cubie's Site"
-title_separator: "-"
-name: "Cubie"
-description: "A little corner of the internet"
-
-
+# basic details
+title: Cubie's Site
 author:
-  name             : "Cubie"
-#  bio              : "I have no idea"
-#  location         : "Somewhere"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/Cubie87"
-
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/Cubie87"
+  name: Cubie
+#  email: "testemailhere"
 
 
-defaults:
-  # _posts
-  - scope:
-      path: ""
-    values:
-      layout: single
-      author_profile: false
-      read_time: false
-      comments: false
-      share: false
-      related: false
+github_username: cubie87
+#linkedin_username: 
+#stackoverflow_username:
+
+# theme
+remote_theme: jekyll/minima
+
+
+# header pages
+header_pages:
+  - index.md
+
+
+# plugins for the theme
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme # dark mode theme
+  - jekyll-titles-from-headings # remove double titles on pages
+
+
+# minima config
+minima:
+  skin: dark # dark mode
+  social_links: # social medias
+    - { platform: github,  user_url: "https://github.com/Cubie87" }
+
+# maths
+mathjax: true
+
+# remove double titles on pages
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: false
+	
