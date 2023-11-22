@@ -10,7 +10,7 @@ I run a compute server which hosts [Pandora](posts/pandora/pandora.md), PiHole, 
 
 I've also written a very basic, poorly implemented, [Rocket Flight Computer](https://github.com/Cubie87/L2RocketSoftware) using the Arduino IDE on a Teensy board to log data for a Tripoli Level 2 Certification Flight. 
 
-
+My current preferred shell is [zsh on wsl](posts/shell/shell.md).
 
 ## Blog Posts
 

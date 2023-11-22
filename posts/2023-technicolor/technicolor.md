@@ -184,7 +184,9 @@ BCM963138 Chipset running Linux 4.1.52 (OpenWRT Snapshot release) with ash shell
 
 ![ufetch](fetch.png)
 
-Also as a fun exerp, this is the splash screen when ssh'ing in. I'm yet to try this signature drink, but will update here if I ever do.
+Also as a fun exerp, this is the splash screen when ssh'ing in. ~~I'm yet to try this signature drink, but will update here if I ever do.~~
+
+The cocktail listed here (which I found out is just a riff on OpenWRT's splash screen! They name their releases after cocktails, and I _think_ Technicolor is just copying/parodying/???? that) is... frankly _really easy_ to get drunk off of, but that's cause Orange Juice really masks Vodka. Would recommend, in moderation.
 
 ```bash
 BusyBox v1.31.1 () built-in shell (ash)
