@@ -104,13 +104,13 @@ Go to
 
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\`
 
-Delete `0DB7E`.
+Delete `0DB7E...`.
 
 Go to
 
 `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\`
 
-Delete `0DB7E`.
+Delete `0DB7E...`.
 
 Then, Task Manager, restart File Explorer.
 

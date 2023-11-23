@@ -108,7 +108,7 @@ This results in Bank I's Type II firmware being booted. From here, we can exploi
 
 ## Obtaining Shell on Type II Firmware
 
-Type II software wasy relatively easy to exploit. BoLaMN provides an [extremely easy script](https://github.com/BoLaMN/tch-exploit) to accomplish this for DJA0231 gateways. Essentially:
+Type II software was relatively easy to exploit. BoLaMN provides an [extremely easy script](https://github.com/BoLaMN/tch-exploit) to accomplish this for DJA0231 gateways. Essentially:
 
  - Change computer IPv4 address to 58.162.0.1
  - Plug computer cable into gateway's WAN
