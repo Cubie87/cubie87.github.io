@@ -3,8 +3,6 @@
 I daily windows don't judge.
 
 
-
-
 ## Setup zsh
 
 Set up zsh on a non-zsh system (I usually use Ubuntu 22.04)
@@ -16,9 +14,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sed -i 's/ZSH_THEME=.*/ZSH_THEME=powerlevel10k\/powerlevel10k/' ~/.zshrc
 ```
 
-
-
-## Setup zsh autosuggestions
+#### Setup zsh autosuggestions
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -34,27 +30,19 @@ plugins=(
 )
 ```
 
-
-
-## Set vim to be the default editor
+#### Set vim to be the default editor
 
 ```bash
 sudo update-alternatives --config editor
 ```
 
-
-
-
-## Set vim to be git's default editor
+#### Set vim to be git's default editor
 
 ```bash
 git config --global core.editor "vim"
 ```
 
-
-
-
-## Set up a git repo
+#### Set up a git repo
 
 ```bash
 git init
@@ -109,6 +97,8 @@ taskkill /F /im wslservice.exe
 
 
 #### Delete 3D Objects
+
+Open Registry Edit.
 
 Go to
 
