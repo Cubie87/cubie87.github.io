@@ -12,8 +12,8 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 My current preferred shell is [zsh on wsl](posts/shell/shell.md).
 
-## Blog Posts
 
+## Blog Posts
 
 [2022 - Cisco AP Flashing](posts/2022-ciscoWAP/ciscoFlash.md)
 
