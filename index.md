@@ -6,7 +6,7 @@ I'm a university student studying _nerd_ subjects, and have an interest in such.
 
 I'm a datahoarder, with a 16TB storage server running on TrueNAS Scale.
 
-I run a compute server which hosts [Pandora](posts/pandora/pandora.md), PiHole, a TailScale node, and occasionally minecraft servers.
+I run a compute server which hosts [Pandora](posts/pandora/pandora.md), PiHole, a tailscale node, and occasionally minecraft servers.
 
 I've also written a very basic, poorly implemented, [Rocket Flight Computer](https://github.com/Cubie87/L2RocketSoftware) using the Arduino IDE on a Teensy board to log data for a Tripoli Level 2 Certification Flight. 
 
@@ -26,3 +26,5 @@ My current preferred shell is [zsh on wsl](posts/shell/shell.md).
 [2023 - Blog Writing](posts/2023-blogwriting/blogwriting.md)
 
 [2023 - Framework Laptop](posts/2023-frameworkLaptop/frameworkLaptop.md)
+
+[2023 - RFID Card Reader](posts/2023-rfidReader/reader.md)

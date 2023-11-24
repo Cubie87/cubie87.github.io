@@ -19,6 +19,6 @@ I booted back into Windows and had another look at the card reader tool, from wh
 
 ![Config Protocol Options](confProtocol.png)
 
-From the first image, it looks like a HID Prox v3 reader, seemingly for 125 kHz cards only. This makes sense as to why none of my cards weren't working, as they were 13.56MHz cards, not 125 kHz.
+From the first image, it looks like a HID Prox v3 reader for the HID Proximity Standard, which is for 125 kHz cards only. This makes sense as to why none of my cards weren't working, as they were 13.56MHz cards, not 125 kHz.
 
-
+For now I'm done here, but may update if I ever get some 125kHz cards in.
