@@ -103,6 +103,7 @@ ap(config-if)#encryption mode ciphers aes-ccm
 ap(config-if)#ssid [SSID Name]
 ap(config-if)#channel least-congested
 ap(config-if)#channel width 80
+ap(config-if)#no dfs band block
 ap(config-if)#no shutdown
 ap(config-if)#exit
 ap(config)#exit
@@ -114,6 +115,7 @@ ap(config)#
  - `ssid [SSID Name]` specifies the ssid to be bound
  - `channel least-congested` specifies the network channel. `least-congested` allows for dynamic channel selection.
  - `channel width 80` set the channel width to 80 MhHz (applicable to 5 GHz only)
+ - `no dfs band block` enables dfs to be used
  - `no shutdown` turn on the interface
  - `exit` exits config mode
 
