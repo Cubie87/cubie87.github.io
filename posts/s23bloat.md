@@ -1,11 +1,12 @@
 # S23
 
 My phone requirements: 
--  have wireless charging
+- have wireless charging
+- not be chinese branded
 
 That's it.
 
-Before you scream at me about killing my battery, know I slowcharge wirelessly (mostly overnight) and don't really gaf.
+Before you scream at me about killing my battery from the heat generated from wireless charging, know I slowcharge wirelessly (mostly overnight) and it's not that big of a concern as I only use my phone lightly.
 
 Would have gotten Samsung A54 but, no wireless charging.
 
@@ -15,7 +16,9 @@ Found a good deal on the S23 so
 
 ## ADB Bloatware Removal
 
-This is my list cause Samsung needs to stop shoving this shit down our throat.
+This is my list of applications that I removed from my S23 using the Android Development Bridge on Windows Powershell. Syntax should be the same across platforms, just not the `.\` part.
+
+You can find out what each app's APK name is using an Application Inspector. I use [this one](https://play.google.com/store/apps/details?id=com.ubqsoft.sec01). 
 
 ```powershell
 .\adb.exe shell pm uninstall -k --user 0 com.facebook.katana
@@ -105,11 +108,22 @@ This is my list cause Samsung needs to stop shoving this shit down our throat.
 .\adb.exe shell pm uninstall -k --user 0 com.sec.android.app.billing
 .\adb.exe shell pm uninstall -k --user 0 com.samsung.android.visualars
 .\adb.exe shell pm uninstall -k --user 0 com.samsung.android.smartmirroring
+
+.\adb.exe shell pm uninstall -k --user 0 com.samsung.android.incallui
+.\adb.exe shell pm uninstall -k --user 0 com.samsung.android.mapsagent
+.\adb.exe shell pm uninstall -k --user 0 com.samsung.android.service.tagservice
+.\adb.exe shell pm uninstall -k --user 0 com.sec.location.nsflp2
+.\adb.exe shell pm uninstall -k --user 0 com.samsung.android.themestore
+.\adb.exe shell pm uninstall -k --user 0 com.sec.android.widgetapp.webmanual
+.\adb.exe shell pm uninstall -k --user 0 com.google.android.apps.tachyon
+.\adb.exe shell pm uninstall -k --user 0 com.sec.android.app.samsungapps
 ```
 
-#### If you fuck up
+#### Restore app
 
-If you fuck up, you can restore with
+If you mess up and need to restore an app, you can restore with
+
+
 
 ```powershell
 .\adb shell pm install-existing --user 0 com.app.dir
