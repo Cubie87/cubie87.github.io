@@ -13,6 +13,9 @@
           {% if site.author.email -%}
             <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
           {%- endif %}
+          {% if page.last_modified_at %}
+            <p>Last modified: {{ page.last_modified_at | date: "%B %d, %Y" }}</p>
+          {% endif %}
         </ul>
       {%- endif %}
       </div>

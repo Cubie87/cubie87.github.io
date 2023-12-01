@@ -18,7 +18,7 @@ header_pages:
 plugins:
   - jekyll-feed
   - jekyll-titles-from-headings # remove double titles on pages
-#  - jekyll-last-modified-at
+  - jekyll-last-modified-at
 
 
 
