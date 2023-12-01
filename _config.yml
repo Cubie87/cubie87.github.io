@@ -21,9 +21,8 @@ plugins:
   - jekyll-last-modified-at
 
 
-last_modified_at:
-  date_format: "%b %-d, %Y"
-  time_format: "%I:%M %p"
+last-modified-at:
+    date-format: '%d-%b-%y'
 
 
 
