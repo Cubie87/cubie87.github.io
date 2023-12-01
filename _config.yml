@@ -21,6 +21,11 @@ plugins:
   - jekyll-last-modified-at
 
 
+last_modified_at:
+  date_format: "%b %-d, %Y"
+  time_format: "%I:%M %p"
+
+
 
 # remove double titles on pages
 titles_from_headings:
