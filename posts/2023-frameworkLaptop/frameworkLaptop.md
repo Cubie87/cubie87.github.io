@@ -66,7 +66,9 @@ The screen however, is a different issue. In all the video reviews, you can see 
 
 #### Thunderbolt Compatibility on USB 4
 
-All functionality with the Dell WD19TB dock works without issue. Note that the dock firmware is on `01.00.32, 01.00.16` (Released on 25 May, 2023), and you may have a different experience on different versions. 
+~~All functionality with the Dell WD19TB dock works without issue.~~ Note that the dock firmware is on `01.00.32, 01.00.16` (Released on 25 May, 2023), and you may have a different experience on different versions. 
+
+See: (The FW AMD Driver Saga)[#The-FW-AMD-Driver-Saga]
 
 Note that TB Daisychaining has not been tested, ~~nor has using that downstream TB port as a display output.~~ 
 
@@ -74,15 +76,19 @@ Note that TB Daisychaining has not been tested, ~~nor has using that downstream 
 
 USB 4 has a bunch of "optional" features from Thunderbolt that _can_ be implemented. I'm still unsure as to exactly which ones are implemented in the FW.
 
-Furthermore, I've found that the the left USB 4 port is able to output display on HDMI and DisplayPort on the WD19TB, but using the Thunderbolt Passthrough for DisplayPort also sometimes works. Sometimes, it doesn't work, and when it does work, sometimes the DP display (not type c) to flickers quite a lot.
+~~Furthermore, I've found that the the left USB 4 port is able to output display on HDMI and DisplayPort on the WD19TB, but using the Thunderbolt Passthrough for DisplayPort also sometimes works. Sometimes, it doesn't work, and when it does work, sometimes the DP display (not type c) to flickers quite a lot.~~
 
-On the right USB 4 port, it's easily able to do Dual DisplayPort (DP + DP over TB Passthrough) without issue.
+~~On the right USB 4 port, it's easily able to do Dual DisplayPort (DP + DP over TB Passthrough) without issue.~~
+
+See: (The FW AMD Driver Saga)[#The-FW-AMD-Driver-Saga]
 
 #### PCIe Passthrough
 
-Unfortunately, when testing with the Aorus Gaming Box (1070), the Framework laptop did not detect a new device being plugged in (no windows "new device sound"), and indeed did not charge from the Gaming Box either. Notable is a lack of drivers that I have installed for the gaming box (mixing AMD and NVidia probably isn't the best idea, and I don't intend to use it in this state anyway), so that may contribute to the non-functionality, but I would still expect that Windows detects the new device.
+~~Unfortunately, when testing with the Aorus Gaming Box (1070), the Framework laptop did not detect a new device being plugged in (no windows "new device sound"), and indeed did not charge from the Gaming Box either. Notable is a lack of drivers that I have installed for the gaming box (mixing AMD and NVidia probably isn't the best idea, and I don't intend to use it in this state anyway), so that may contribute to the non-functionality, but I would still expect that Windows detects the new device.~~
 
-To be updated with more information soon.
+~~Further evidence of it not being functional is that the laptop does not charge from the eGPU box when plugged into it. Attempting to install drivers, the error provided is that no compatible GPU devices found.~~
+
+~~To be updated with more information soon.~~ See: (The FW AMD Driver Saga)[#The-FW-AMD-Driver-Saga]
 
 #### Keyboard
 
@@ -130,5 +136,49 @@ The laptop hinge is.... alright. It's _very_ springy, and not very well built. I
 As far as I can tell, Macs have insanely high $c$ values with a low $k$ value, resulting in a stiff ish hinge (mostly through the damper action, as opposed to spring action).
 
 
+## The FW AMD Driver Saga
 
-More thoughts to come...
+I had some issues with the FW AMD 13 on BIOS 3.03 with all of FW's [provided drivers](https://knowledgebase.frame.work/framework-laptop-bios-and-driver-releases-amd-ryzen-7040-series-r1rXGVL16) with compatibility with my WD19TB, and with booting.
+
+This issue could be summarised by the enormous list of unrecognised/unknown devices that were present in Device Manager
+
+![Unknown Devices!](deviceManager.png)
+
+#### Dock Issues
+
+This dock series, for me, is quite important, as all of my devices run through there.
+
+Originally, the issue was simply that the Ethernet port wasn't being detected. I tried installing drivers from Dell without success. This was a minor issue, so I overlooked it, as I could still use Wifi, but at reduced speed (I should talk about my network setup sometime)
+
+Later on, when the laptop was waking from sleep, sometimes it wouldn't detect the monitors I had plugged in (2x 1080p60 over DP and HDMI), so would have to power cycle the dock (not the laptop, the dock) by unplugging and replugging, for the monitors to be detected (doing so while leaving the laptop plugged in to the dock).
+
+I also encountered issues where the laptop would refuse to recognise the dock at all, instead assuming that it was just a basic 65W+ USB C Charger. Again, solved by power cycling the dock.
+
+These issues were getting annoying, so I reached out to the FW Support Staff at this point.
+
+#### Boot Issues
+
+Another issue that I was experiencing with the Framework Laptop was that when booting up from a shut down state (either shut down or hibernate, as hibernate is still powered off), the startup process would halt before detecting the screen. None of the FW expansion card debug LEDs showed anything*, and the caps lock key would not function, only the Power Button LED was lit. The solution was to hold down the power button for 7s or so until the system hard powered off, before releasing, and attempting to turn it on normally again. 
+
+This would usually resolve the issue, but sometimes it would persist throughout multiple restarts.
+
+*once I caught it blinking 3 times (likely toward the end of a debug sequence), but it did not repeat after waiting a few minutes.
+
+#### Solution
+
+Download AMD's Drivers, but not the manual install of the `AMD Software: Adrenalin Edition` (23.11.1), but the Auto-Detect and Install tool. I was missing some really basic stuff like USB 4 CM, and I2C/SPI drivers for the chipset that were missing, and were not installed by the Adrenalin Edition download. The Auto-Detect and Install is _necessary_ for all functionality to work, which I wasn't told anywhere unfortunately.
+
+Interestingly, the drivers that I was missing doesn't appear to be available as individual downloads, and needs to be installed through the "autodetect and install" method. :// _I_ dislike this, as I prefer manual control, but `¯\_(ツ)_/¯`
+
+Notable is that this only fixed some issues and not others.
+
+Fixed:
+ - While docked, wake from sleep and detecting monitors
+ - Detecting Ethernet while docked to WD19TB
+ - Detecting eGPU when plugged in
+
+Pending: 
+ - Ghost Boot
+
+Not Fixed
+ - Sometimes not recognising dock when plugging in
