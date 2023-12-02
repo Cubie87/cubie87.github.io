@@ -68,7 +68,7 @@ The screen however, is a different issue. In all the video reviews, you can see 
 
 ~~All functionality with the Dell WD19TB dock works without issue.~~ Note that the dock firmware is on `01.00.32, 01.00.16` (Released on 25 May, 2023), and you may have a different experience on different versions. 
 
-See: [The FW AMD Driver Saga](#The-FW-AMD-Driver-Saga)
+See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga)
 
 Note that TB Daisychaining has not been tested, ~~nor has using that downstream TB port as a display output.~~ 
 
@@ -80,7 +80,7 @@ USB 4 has a bunch of "optional" features from Thunderbolt that _can_ be implemen
 
 ~~On the right USB 4 port, it's easily able to do Dual DisplayPort (DP + DP over TB Passthrough) without issue.~~
 
-See: [The FW AMD Driver Saga](#The-FW-AMD-Driver-Saga)
+See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga)
 
 #### PCIe Passthrough
 
@@ -88,7 +88,7 @@ See: [The FW AMD Driver Saga](#The-FW-AMD-Driver-Saga)
 
 ~~Further evidence of it not being functional is that the laptop does not charge from the eGPU box when plugged into it. Attempting to install drivers, the error provided is that no compatible GPU devices found.~~
 
-~~To be updated with more information soon.~~ See: [The FW AMD Driver Saga](#The-FW-AMD-Driver-Saga)
+~~To be updated with more information soon.~~ See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga)
 
 #### Keyboard
 
@@ -180,5 +180,5 @@ Fixed:
 Pending: 
  - Ghost Boot
 
-Not Fixed
+Not Fixed:
  - Sometimes not recognising dock when plugging in
