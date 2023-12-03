@@ -154,6 +154,8 @@ Later on, when the laptop was waking from sleep, sometimes it wouldn't detect th
 
 I also encountered issues where the laptop would refuse to recognise the dock at all, instead assuming that it was just a basic 65W+ USB C Charger. Again, solved by power cycling the dock.
 
+There were also cases where the laptop wouldn't recognise any USB devices that I plugged into either the dock or the laptop.
+
 These issues were getting annoying, so I reached out to the FW Support Staff at this point.
 
 #### Boot Issues
@@ -178,7 +180,7 @@ Fixed:
  - Detecting eGPU when plugged in
 
 Pending: 
- - Ghost Boot
+ - Not turning on via power button
 
 Not Fixed:
- - Sometimes not recognising dock when plugging in
+ - Not turning on when docking (Wake on AC Attach)
