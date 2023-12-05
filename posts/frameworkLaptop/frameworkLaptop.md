@@ -177,10 +177,11 @@ Notable is that this only fixed some issues and not others.
 Fixed:
  - While docked, wake from sleep and detecting monitors
  - Detecting Ethernet while docked to WD19TB
- - Detecting eGPU when plugged in
+ - Detecting USBs when plugged into Dock
+ - Detecting eGPU devices
 
 Pending: 
- - Not turning on via power button
+ - Not turning on when plugging into dock (Wake on AC Attach)
 
 Not Fixed:
- - Not turning on when docking (Wake on AC Attach)
+ - Not turning on via power button while docked
