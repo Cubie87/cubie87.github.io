@@ -1,6 +1,6 @@
 # The Framework Laptop
 
-As some of you will know, Framework Computer Inc. has been on the scene for a few years now, but has made some notable headlines regarding their upgradable, customisable, and sustainable, laptop. The extent to which their goals have been achieved is questionable, but the intent is to be applauded.
+As some of you will know, Framework Computer Inc. has been on the scene for a few years now, but has made some notable headlines regarding their upgradable, customisable, and sustainable, laptop. The extent to which their goals have been achieved is uncertain, but the intent is to be applauded.
 
 I have been considering replacing my current laptop, but to fully understand why, background is needed regarding my computer setup.
 
@@ -146,7 +146,7 @@ This issue could be summarised by the enormous list of unrecognised/unknown devi
 
 #### Dock Issues
 
-This dock series, for me, is quite important, as all of my devices run through there.
+The Dell WD19TB dock series, for me, is quite important, as all of my devices run through there.
 
 Originally, the issue was simply that the Ethernet port wasn't being detected. I tried installing drivers from Dell without success. This was a minor issue, so I overlooked it, as I could still use Wifi, but at reduced speed (I should talk about my network setup sometime)
 
