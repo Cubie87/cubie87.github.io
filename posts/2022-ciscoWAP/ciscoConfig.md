@@ -4,6 +4,8 @@ This assumes that you have an autonomous Cisco AP with no previous configuration
 
 The AP's current IP can be found through the DHCP server on your router.
 
+Notably is that the Web UI was extremely difficult to use on my units, and, along with being Read Only, made it unreasonable to use for the AP configuration.
+
 ## Connect to AP
 
 Connect to the AP using telnet. Your AP might have a different IP
