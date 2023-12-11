@@ -68,9 +68,9 @@ The screen however, is a different issue. In all the video reviews, you can see 
 
 ~~All functionality with the Dell WD19TB dock works without issue.~~ Note that the dock firmware is on `01.00.32, 01.00.16` (Released on 25 May, 2023), and you may have a different experience on different versions. 
 
-See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga)
+See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga) but tldr is that it works with the WD19TB dock, and my eGPU, but you need additional AMD drivers for this to work, the FW provided drivers are not enough.
 
-Note that TB Daisychaining has not been tested, ~~nor has using that downstream TB port as a display output.~~ 
+Note that TB Daisychaining has not been tested, ~~nor has using that downstream TB port as a display output.~~ Downstream TB Port as a display works, but can shake sometimes like VGA style momentary distortions. Unsure if it's a signal issue of that cable or the laptop.
 
 #### General USB 4 Thoughts
 
@@ -80,7 +80,7 @@ USB 4 has a bunch of "optional" features from Thunderbolt that _can_ be implemen
 
 ~~On the right USB 4 port, it's easily able to do Dual DisplayPort (DP + DP over TB Passthrough) without issue.~~
 
-See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga)
+See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga) but tldr is that you need additional AMD drivers for this to work, the FW provided drivers are not enough. Otherwise looks good and a highly implemented port. Exact features are undetermined.
 
 #### PCIe Passthrough
 
@@ -88,7 +88,7 @@ See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga)
 
 ~~Further evidence of it not being functional is that the laptop does not charge from the eGPU box when plugged into it. Attempting to install drivers, the error provided is that no compatible GPU devices found.~~
 
-~~To be updated with more information soon.~~ See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga)
+~~To be updated with more information soon.~~ See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga) but tldr is that it needs additional AMD drivers for this to work, the FW provided drivers are not enough. Otherwise eGPU is detected and works, but doesn't appear to charge from it.
 
 #### Keyboard
 
@@ -164,7 +164,7 @@ Another issue that I was experiencing with the Framework Laptop was that when bo
 
 This would usually resolve the issue, but sometimes it would persist throughout multiple restarts.
 
-*once I caught it blinking 3 times (likely toward the end of a debug sequence), but it did not repeat after waiting a few minutes.
+~~*once I caught it blinking 3 times (likely toward the end of a debug sequence), but it did not repeat after waiting a few minutes.~~ I've caught it's sequence, which can be seen [here](#not-turning-on-sometimes)
 
 #### Partial Solution
 
@@ -186,3 +186,41 @@ Not Fixed:
  - Not turning on sometimes.
 
 This is still pending Framework Support, which I'll update when notable things happen.
+
+
+#### Not Turning on Sometimes 
+
+Pressing the power button, OR plugging in the laptop (I have Wake on AC Attach enabled) yields the same result outlined below. All of the below occur.
+
+ - Power Button LED Lights Up
+ - No Display on screen (no splash screen logo)
+ - Caps lock key does not respond
+ - SOMETIMES the debug led (next to expansion modules) will blink the following code after about a minute of idle in this vegetative state:
+    - 1x White
+    - 12x Green
+    - 1x Red
+    - 1x Blue
+    - 7x Green
+
+They are not affected by:
+ - If the laptop is docked when powering on
+ - If the laptop was docked when shutting down
+ - If the laptop is currently plugged into a charger or not
+ - If any expansion modules are inserted
+ - If Windows 10 or 11 is installed
+ - If any SSD is installed
+
+I have:
+ - Reseated the Input Cover
+ - Reseated the RAM
+ - Swapped RAM sticks around (stick that was in slot 0 is now installed in slot 1 and vice verca)
+ - Reseated the SSD
+ - Swapped around expansion modules
+ - Reseated the Display Connector
+ - Reset the BIOS (Pressing on SW3's levelr 10 times slowly (once per second or so))
+ - Reseated the Battery Connector 
+
+
+To "fix" this, you hold down the power button for 9 seconds, hard shutting down the system, and then try to turn it back on. Sometimes this will fix the issue, but sometimes the above will occur, multiple times, before a successful boot. There does not appear to be any correlation as to why it occurs. 
+
+Notably, restarting the system has never failed, but shutting down and immediately trying to re-power it on sometimes yields the symptoms outlined above.
