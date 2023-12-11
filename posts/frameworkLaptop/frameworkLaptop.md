@@ -166,9 +166,11 @@ This would usually resolve the issue, but sometimes it would persist throughout 
 
 *once I caught it blinking 3 times (likely toward the end of a debug sequence), but it did not repeat after waiting a few minutes.
 
-#### Solution
+#### Partial Solution
 
 Download AMD's Drivers, but not the manual install of the `AMD Software: Adrenalin Edition` (23.11.1), but the Auto-Detect and Install tool. I was missing some really basic stuff like USB 4 CM, and I2C/SPI drivers for the chipset that were missing, and were not installed by the Adrenalin Edition download. The Auto-Detect and Install is _necessary_ for all functionality to work, which I wasn't told anywhere unfortunately.
+
+![AMD Chipset Drivers](drivers.png)
 
 Interestingly, the drivers that I was missing doesn't appear to be available as individual downloads, and needs to be installed through the "autodetect and install" method. :// _I_ dislike this, as I prefer manual control, but `¯\_(ツ)_/¯`
 
@@ -180,8 +182,7 @@ Fixed:
  - Detecting USBs when plugged into Dock
  - Detecting eGPU devices
 
-Pending: 
- - Not turning on when plugging into dock (Wake on AC Attach)
+Not Fixed: 
+ - Not turning on sometimes.
 
-Not Fixed:
- - Not turning on via power button while docked
+This is still pending Framework Support, which I'll update when notable things happen.
