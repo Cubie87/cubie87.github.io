@@ -218,9 +218,13 @@ I have:
  - Swapped around expansion modules
  - Reseated the Display Connector
  - Reset the BIOS (Pressing on SW3's levelr 10 times slowly (once per second or so))
+ - Re-updated the BIOS (3.03 &rarr; 3.03)
  - Reseated the Battery Connector 
 
 
 To "fix" this, you hold down the power button for 9 seconds, hard shutting down the system, and then try to turn it back on. Sometimes this will fix the issue, but sometimes the above will occur, multiple times, before a successful boot. There does not appear to be any correlation as to why it occurs. 
 
 Notably, restarting the system has never failed, but shutting down and immediately trying to re-power it on sometimes yields the symptoms outlined above.
+
+If anyone has any suggestions or ideas as to what could be doing this, a pull request or creating an issue would be greatly appreciated!
+
