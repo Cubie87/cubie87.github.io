@@ -1,6 +1,6 @@
 # Configuring a Cisco AP
 
-This assumes that you have an autonomous Cisco AP with no previous configuration. I'm using a 3702i AP.
+This assumes that you have an autonomous Cisco AP with no previous configuration. I'm using a 3702i AP. If you'd like to flash the AP, please check the post [here](ciscoFlash.md)
 
 The AP's current IP can be found through the DHCP server on your router.
 

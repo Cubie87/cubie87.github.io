@@ -1,6 +1,6 @@
 # Flashing a Cisco AP
 
-Flashing a cisco wireless access point (AP). These are often available at enterprise auctions or online sources.
+Flashing a cisco wireless access point (AP). These are often available at enterprise auctions or online sources. If you'd like to configure the AP, please check the post [here](ciscoConfig.md)
 
 The example used here is the Cisco 3702i APs.
 
