@@ -51,7 +51,11 @@ git remote add origin https://repo/address
 git push --set-upstream origin master
 ```
 
+#### CTF Packages
 
+```bash
+sudo apt install ffmpeg exiftool binwalk basez qpdf 
+```
 
 
 ## Misc Commands
