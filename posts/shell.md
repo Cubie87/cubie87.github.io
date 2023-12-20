@@ -54,7 +54,7 @@ git push --set-upstream origin master
 #### CTF Packages
 
 ```bash
-sudo apt install ffmpeg exiftool binwalk basez qpdf 
+sudo apt install vim htop ffmpeg exiftool screen binwalk basez qpdf 
 ```
 
 
