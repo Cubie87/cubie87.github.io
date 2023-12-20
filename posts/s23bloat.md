@@ -3,16 +3,19 @@
 My phone requirements: 
 - have wireless charging
 - not be chinese branded
+- not apple (sorry)
 
 That's it.
 
-Before you scream at me about killing my battery from the heat generated from wireless charging, know I slowcharge wirelessly (mostly overnight) and it's not that big of a concern as I only use my phone lightly.
+wireless charging yes, can reduce battery life in the long term, and yes, generates excessive heat thus also costing more in power, but for a single digit wattage phone charger, I don't see the power bill being an issue.
+
+Battery endurance is also something that I'd love to maximise, as it reduces eWaste and reduces unnecessary financial expenditures, but _for me_, the convenience of wireless charging is so much greater than the battery endurance, that I am ok with the drawback. Furthermore, I mandate 5W slowcharging as I always charge overnight, which also reduces battery wear.
 
 Would have gotten Samsung A54 but, no wireless charging.
 
 Pixel 7a was tempting but their quick panel (settings above notif) isn't for me (too many taps), and google might kill it at any time.
 
-Found a good deal on the S23 so
+Found a good deal on the S23 so here we are.
 
 ## ADB Bloatware Removal
 
