@@ -54,13 +54,13 @@ git push --set-upstream origin master
 #### CTF Packages
 
 ```bash
-sudo apt install vim htop ffmpeg exiftool screen binwalk basez qpdf 
+sudo apt install vim htop ffmpeg exiftool screen binwalk basez qpdf nmap traceroute neofetch
 ```
 
 
-## Misc Commands
+## Misc Windows Commands
 
-#### Delete Cortana
+#### Delete Cortana (Win10 only)
 
 Powershell
 
@@ -68,7 +68,7 @@ Powershell
 Get-AppxPackage -allusers Microsoft.549981C3F5F10 | Remove-AppxPackage
 ```
 
-#### Delete other windows 10 bloat
+#### Delete Other Windows 10 Bloat
 
 Powershell
 
