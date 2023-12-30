@@ -4,7 +4,7 @@ Hello! Welcome to my little corner of the internet. This is a little test websit
 
 I'm a university student studying _nerd_ subjects, and have an interest in such.
 
-I use a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md) and my current preferred shell is [zsh on wsl](posts/shell.md).
+My current preferred shell is [zsh on wsl](posts/shell.md) on a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md).
 
 I [have regrets](posts/s23bloat.md) using a Samsung S23.
 

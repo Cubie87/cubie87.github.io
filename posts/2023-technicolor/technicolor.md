@@ -32,7 +32,7 @@ The firmware being run by these gateways are catergorised into 3 different types
 
 Type I firmware can be flashed through the web UI, uploading a (valid) firmware file, and the gateway will do the flashing for you. This can be used to get the gateway to run type II firmware.
 
-Type II firmware are the onle type vulnerable to exploits, used to enable root access and thus unlock functionality.
+Type II firmware are the only type vulnerable to exploits, used to enable root access and thus unlock functionality.
 
 Type III firmware cannot be flashed traditionally. It needs to first flash Bank I firmware to Type II over IP, then exploit this firmware to get shell, then copy Bank I to Bank II. The gateway should now boot from Bank II.
 

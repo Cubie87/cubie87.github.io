@@ -110,7 +110,9 @@ Adding tape to these two areas (black arrow)
 
 (Image Credit to Framework's [Support](https://guides.frame.work/Guide/Touchpad+Replacement+Guide/90))
 
-I used one layer of electical tape, and one of a generic sticker (totalling to around ~~0.32mm~~ 0.22mm of added thickness (reduced thickness due to minor issues)), which was enough for my laptop. This manufacturing tolerance will vary, so different materials may be needed for your laptop, if you choose to do this. Furthermore, I don't recommend electrical tape on the top layer, as the slight rubber quality to the tape makes it stick, creating a fake "click" as the tab un-adheres from the tape.
+I used one layer of electical tape, and one of a generic sticker (totalling to around ~~0.32mm 0.22mm~~ 0.14-0.16mm of added thickness* (reduced thickness due to minor issues)), which was enough for my laptop. This manufacturing tolerance will vary, so different materials may be needed for your laptop, if you choose to do this. Furthermore, I don't recommend electrical tape on the top layer, as the slight rubber quality to the tape makes it stick, creating a fake "click" as the tab un-adheres from the tape.
+
+\* using different thickness adhesives to try out what works. I'm currently using blank printable sticker paper.
 
 ![Trackpad Tape Mod 1](trackpadModded.png)
 
@@ -228,3 +230,22 @@ Notably, restarting the system has never failed, but shutting down and immediate
 
 If anyone has any suggestions or ideas as to what could be doing this, a pull request or creating an issue would be greatly appreciated!
 
+## Framework Support
+
+Good service, but took a lot of back and fourth to diagnose/troubleshoot the issue unfortuantely. A lot of this I can chalk up to the multitude of modules and possible failure points to be considered, but did make for a slightly unpleasant experience, especially since support would ask you to test only one thing at a time. It's probably a feature from support's perspective where the end user's skill/experience is unknown, but was a bit tedious for me personally.
+
+Overall though, a great experience, especially since they send you the replacement, and _then_ ask you to return the faulty device. This lets you still have a (broken, but) functional computer while waiting for shipping, as opposed to Lenovo, which makes you send back the system first before they ship, meaning that you might be out of luck in terms of having a usable computer for months as you wait for shipping.
+
+## Replacing the Motherboard
+
+Went smoothly, followed the guide provided at [framework guides](https://guides.frame.work/Guide/AMD+Ryzen+7040+Series+Upgrade+Overview/205?lang=en).
+
+Notable points:
+ - Had to reinstall drivers wholly (FW Provided bundle + AMD OEM (as mentioned [above](#the-fw-amd-driver-saga)))
+ - The physical board is so thin! I'm used to the thicker circuit boards, but this one is just... feels so fragile.
+    - The FW Motherboard is 1mm thick (same as m.2 drives)
+    - For reference, PCIe devices have a board thickness of 1.6mm
+
+## Footnotes
+
+If you're keeping track, I've had issues with three laptops in a row this year having defects/issues, with the fourth one finally fixing everything, just in time for new years. 
