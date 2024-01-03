@@ -2,6 +2,13 @@
 
 I daily windows, so WSL, but am actively trying out Linux distros (feel free to recommend!)
 
+Current list of issues stopping me from moving to Linux:
+ - CAD Program Support (VM Solvable, but input latency issues)
+ - OneDrive Files on Demand
+ - AutoHotKey alternative
+
+I too, am shocked at how short this list is.
+
 ## Shell
 
 My shell is zsh running oh-my-zsh with powerlevel10k
@@ -58,12 +65,12 @@ git push --set-upstream origin master
 
 Debian
 ```sh
-sudo apt install vim htop ffmpeg exiftool screen binwalk basez qpdf nmap traceroute neofetch
+sudo apt install vim htop ffmpeg exiftool screen binwalk basez qpdf nmap traceroute neofetch wireshark
 ```
 
 Arch
 ```sh
-sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch
+sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch wireshark-qt
 ```
 
 
@@ -100,7 +107,19 @@ sudo systemctl enable sddm
 sudo systemctl start sddm
 ```
 
+### Change around Mac's god awful modifier key layout
 
+```sh
+sudo vim /etc/modprobe.d/hid_apple.conf
+
+# append this to file
+options hid_apple fnmode=2
+options hid_apple swap_fn_leftctrl=1
+options hid_apple swap_opt_cmd=1
+
+sudo mkinitcpio -p linux
+```
+I wonder if this works on debian based systems as well?
 
 ## Misc Windows Commands
 
