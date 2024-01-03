@@ -3,11 +3,11 @@
 I daily windows, so WSL, but am actively trying out Linux distros (feel free to recommend!)
 
 Current list of issues stopping me from moving to Linux:
- - CAD Program Support (VM Solvable, but input latency issues)
- - OneDrive Files on Demand
+ - CAD Program Support (VM Solvable, but input latency issues which are suboptimal but acceptable)
+ - OneDrive Files on Demand (soon to be phased out of my life)
  - AutoHotKey alternative
-
-I too, am shocked at how short this list is.
+ - Notepad++ alternative
+ - Logi Options+ alternative
 
 ## Shell
 
@@ -70,7 +70,7 @@ sudo apt install vim htop ffmpeg exiftool screen binwalk basez qpdf nmap tracero
 
 Arch
 ```sh
-sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch wireshark-qt
+sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch wireshark-qt curl wget
 ```
 
 
