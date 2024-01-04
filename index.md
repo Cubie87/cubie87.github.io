@@ -6,7 +6,7 @@ I'm a university student studying _nerd_ subjects, and have an interest in such.
 
 My current preferred shell is [zsh on wsl](posts/shell.md) on a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md).
 
-I [have regrets](posts/s23bloat.md) using a Samsung S23.
+I [have mild regrets](posts/s23bloat.md) using a Samsung S23.
 
 I'm a datahoarder, with a 18TB storage server running on TrueNAS Scale (5x4TB raidz1 + 2x2TB mirror).
 

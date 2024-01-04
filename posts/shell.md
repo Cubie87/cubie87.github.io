@@ -89,15 +89,18 @@ archinstall
 ```
 
 Once installed chroot in and install the following before exiting out of the install environment.
+
  - Display Server: Xorg
     - `sudo pacman -Ss xf86-video-intel` (for Macbook Pro 12,1)
  - DE: KDE Plasma
-    - `sudo pacman -S ssdm plasma-desktop konsole kscreen vim`
+    - `sudo pacman -S sddm plasma-desktop konsole vim`
+ - Display Scaling
+    - `sudo pacman -S kscreen`
  - Wifi
     - `sudo pacman -S plasma-nm`
  - Audio
     - `sudo pacman -S plasma-pa`
- - Shell: zsh
+ - Shell: [zsh](#shell)
 
 Reboot
 
@@ -117,6 +120,7 @@ options hid_apple fnmode=2
 options hid_apple swap_fn_leftctrl=1
 options hid_apple swap_opt_cmd=1
 
+# regenerate initramfs
 sudo mkinitcpio -p linux
 ```
 I wonder if this works on debian based systems as well?
