@@ -27,7 +27,7 @@ sed -i 's/ZSH_THEME=.*/ZSH_THEME=powerlevel10k\/powerlevel10k/' ~/.zshrc
 
 # get zsh autosuggestions and add to .zshrc plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-sed -i "s/plugins=(/^plugins=(\n    zsh-autosuggestions\n    /" ~/.zshrc
+sed -i "s/^plugins=(/plugins=(\n    zsh-autosuggestions\n    /" ~/.zshrc
 ```
 
 
