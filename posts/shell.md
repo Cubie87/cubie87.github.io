@@ -11,32 +11,25 @@ Current list of issues stopping me from moving to Linux:
 
 ## Shell
 
-My shell is zsh running oh-my-zsh with powerlevel10k
+My shell is zsh running oh-my-zsh with powerlevel10k and zsh-autosuggestions
 
 Install zsh first using whatever package manager the distro uses. Then run the following:
 
 ```sh
-## Install zsh using package manager. Then run the following:
+## Install zsh using package manager
+
+# install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install powerlevel10k and set as zsh theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 sed -i 's/ZSH_THEME=.*/ZSH_THEME=powerlevel10k\/powerlevel10k/' ~/.zshrc
-```
 
-### Setup zsh autosuggestions
-
-```sh
+# get zsh autosuggestions and add to .zshrc plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sed -i "s/plugins=(/^plugins=(\n    zsh-autosuggestions\n    /" ~/.zshrc
 ```
 
-```sh
-vim ~/.zshrc
-
-# add the following line to the plugins file
-plugins=( 
-    # other plugins...
-    zsh-autosuggestions
-)
-```
 
 ### Set vim to be the default terminal editor
 Debian thing
@@ -65,14 +58,16 @@ git push --set-upstream origin master
 
 Debian
 ```sh
-sudo apt install vim htop ffmpeg exiftool screen binwalk basez qpdf nmap traceroute neofetch wireshark
+sudo apt install vim htop ffmpeg exiftool screen binwalk basez qpdf nmap traceroute neofetch wireshark smartmontools 
 ```
 
 Arch
 ```sh
-sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch wireshark-qt curl wget
+sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch wireshark-qt curl wget smartmontools
 ```
-
+```sh
+sudo yay -S basez ulauncher 
+```
 
 ## Arch
 
