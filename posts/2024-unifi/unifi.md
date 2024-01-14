@@ -184,4 +184,41 @@ root@OpenWrt:~#
 ```
 
 
+
+## Downgrading UAP Firmware
+
+from Ubiquiti's release page [here](https://community.ui.com/releases/UAP-USW-Firmware-4-0-30-10217/602dd4ce-d85c-4de4-8b5f-9aab51ef1942), note:
+
+> UAP, UAP-LR, UAP-IW, UAP-OD and UAP-OD5 cannot be downgraded from firmware 4.0.17+ to an earlier release.
+
+Why this restriction exists is frustrating, especially when it's listed as a "known issue" but appears to be intentional. I was able to downgrade my 4.0.42 UAP to 4.0.30 by ssh'ing in and typing
+
+```
+UBNT-BZ.v4.0.42# upgrade http://dl.ui.com/unifi/firmware/BZ2/4.0.30.10217/BZ.ar7240.v4.0.30.10217.190402.2213.bin
+Downloading firmware from 'http://dl.ui.com/unifi/firmware/BZ2/4.0.30.10217/BZ.ar7240.v4.0.30.10217.190402.2213.bin'.
+
+Waiting firmware upgrade ..
+Connection to 192.168.X.X closed by remote host.
+Connection to 192.168.X.X closed.
+
+~$ ssh ubnt@192.168.X.X
+ubnt@192.168.X.X's password:
+
+
+BusyBox v1.25.1 () built-in shell (ash)
+
+
+  ___ ___      .__________.__
+ |   |   |____ |__\_  ____/__|
+ |   |   /    \|  ||  __) |  |   (c) 2010-2019
+ |   |  |   |  \  ||  \   |  |   Ubiquiti Networks, Inc.
+ |______|___|  /__||__/   |__|
+            |_/                  https://www.ui.com/
+
+      Welcome to UniFi UAP!
+
+UBNT-BZ.v4.0.30#
+```
+which is, fine, it shows that you can downgrade (and you may have good reason too! Firmware bugs/edge cases/etc), but the inability to downgrade past 4.0.17 is extremely frustrating.
+
 More to come...
