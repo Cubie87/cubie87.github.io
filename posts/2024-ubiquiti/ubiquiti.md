@@ -1,6 +1,6 @@
-# Ubiquiti AP Sideloading
+# Ubiquiti AP Flashing
 
-I don't think it's really hacking or anything at this point, it's just running third party firmware on it.
+I don't think it's really hacking or anything at this point, it's just running third party firmware on it, and it's not really rooting either, as you get root shell out of the box via sudo (read on to find out more)
 
 
 
@@ -8,7 +8,9 @@ I don't think it's really hacking or anything at this point, it's just running t
 
 The Unifi AP (note: not the AP AC, this is the 802.11b/g/n model ONLY, no 802.11ac support) is something of an enigma, given that Ubiquiti seems to be taking the Apple approach of product listing, absolutely nuking the hell out of any old hardware product pages and making them essentially obsolete simply by hiding basic information such as specs and required voltage.
 
-Speaking of which, these things are 24VDC PASSIVE PoE! What the hell! If you plug the wrong cable in, you destroy your laptop. Sucks ass. Luckily I was able to borrow a 24V Ubiquiti PoE injector to play around with this hardware, but god.
+The naming scheme is also trash, as I have to google `unifi ap -ac` to prevent being flooded by all the irrelevant results pertaining to the newer version of their APs.
+
+Speaking of which, these things are 24VDC PASSIVE PoE! What the hell! If you plug the wrong cable in, you destroy your laptop. Sucks ass. Luckily I was able to borrow a 24V Ubiquiti PoE injector to play around with this hardware, but why??? 48V PoE is perfectly fine of a standard.
 
 ### Hardware
 
