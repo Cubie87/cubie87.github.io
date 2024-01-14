@@ -158,7 +158,7 @@ Connection to 192.168.X.X closed.
 
 After waiting for the system to reboot, I connected to the AP on 192.168.1.1 over ethernet on a browser, allowing me to log into the web interface for OpenWRT and login with `root/` (blank password). From here, under `Network > Interfaces` I changed the `br-lan` interface from `General Settings > Static IP` to `DHCP Client` and `Firewall Settings > WAN` to `LAN`, as well as disabling the DHCP on the interface (`DHCP Server > Ignore interface`) so I can access it from my home network.
 
-Now it's just a bog standard Wifi AP now, running OpenWRT, which means, funnily enough, it could be an entire nat filter/router/firewall/ap for a home network, with the downside that you don't get any LAN ethernet ports.
+Now it's just a bog standard Wifi AP now, running OpenWRT, which means, funnily enough, it could be an entire nat filter/router/firewall/ap for a home network, with the downside that you don't get any LAN ethernet ports, especially considering how much power it draws (3.2W idle)
 
 Root shell over ssh is also accessible, with a new splash screen now
 

@@ -31,4 +31,4 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 [2023 - RFID Card Reader](posts/2023-rfidReader/reader.md)
 
-[2024 - Inverted Pendulum](posts/2024-pendulum/pendulum.md)
+[2024 - Unifi AP Flashing (OpenWRT)](posts/2024-unifi/unifi.md)
