@@ -1,4 +1,4 @@
-# Ubiquiti AP Flashing
+# Flashing OpenWRT onto Unifi APs
 
 I don't think it's really hacking or anything at this point, it's just running third party firmware on it, and it's not really rooting either, as you get root shell out of the box via sudo (read on to find out more)
 
@@ -158,7 +158,7 @@ Connection to 192.168.X.X closed.
 
 After waiting for the system to reboot, I connected to the AP on 192.168.1.1 over ethernet on a browser, allowing me to log into the web interface for OpenWRT and login with `root/` (blank password). From here, under `Network > Interfaces` I changed the `br-lan` interface from `General Settings > Static IP` to `DHCP Client` and `Firewall Settings > WAN` to `LAN`, as well as disabling the DHCP on the interface (`DHCP Server > Ignore interface`) so I can access it from my home network.
 
-Now it's just a bog standard Wifi AP now, running OpenWRT, which means, funnily enough, it could be an entire nat filter/router/firewall/ap for a home network, with the downside that you don't get any LAN ethernet ports, especially considering how much power it draws (3.2W idle)
+Now it's just a bog standard Wifi AP, running OpenWRT, which means, funnily enough, it could be an entire nat filter/router/firewall/ap for a home network, with the downside that you don't get any LAN ethernet ports, especially considering how much power it draws (3.2W idle)
 
 Root shell over ssh is also accessible, with a new splash screen now
 
@@ -221,4 +221,6 @@ UBNT-BZ.v4.0.30#
 ```
 which is, fine, it shows that you can downgrade (and you may have good reason too! Firmware bugs/edge cases/etc), but the inability to downgrade past 4.0.17 is extremely frustrating.
 
-More to come...
+
+
+I don't want to start decompiling binaries and firmware as that may be breaking EULA/whatever, so that's where I'm stopping my investigation. I'm keen to try out OWRT on a device, see what it can offer, and what packages I can install using opkg.
