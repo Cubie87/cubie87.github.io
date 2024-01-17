@@ -17,11 +17,7 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 ## Blog Posts
 
-[2021 - Physical Network Setup](posts/2021-network/network.md)
-
-[2022 - Cisco AP Flashing](posts/2022-ciscoWAP/ciscoFlash.md)
-
-[2022 - Cisco AP Setup](posts/2022-ciscoWAP/ciscoConfig.md)
+[2024 - Unifi AP Flashing (OpenWRT)](posts/2024-unifi/unifi.md)
 
 [2023 - VISCA over IP](posts/2023-viscaip/viscaOverIP.md)
 
@@ -31,4 +27,8 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 [2023 - RFID Card Reader](posts/2023-rfidReader/reader.md)
 
-[2024 - Unifi AP Flashing (OpenWRT)](posts/2024-unifi/unifi.md)
+[2022 - Cisco AP Setup](posts/2022-ciscoWAP/ciscoConfig.md)
+
+[2022 - Cisco AP Flashing](posts/2022-ciscoWAP/ciscoFlash.md)
+
+[2021 - Physical Network Setup](posts/2021-network/network.md)
