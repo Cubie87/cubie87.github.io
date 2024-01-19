@@ -116,9 +116,15 @@ options hid_apple swap_fn_leftctrl=1
 options hid_apple swap_opt_cmd=1
 
 # regenerate initramfs
-sudo mkinitcpio -p linux
+# debian
+#sudo update-initramfs -u
+# arch
+#sudo mkinitcpio -p linux
 ```
-I wonder if this works on debian based systems as well?
+
+## Kali
+
+When installing Kali Linux on a MacbookPro12,1 using Rufus, write in MBR, DD mode, not ISO
 
 ## Misc Windows Commands
 
