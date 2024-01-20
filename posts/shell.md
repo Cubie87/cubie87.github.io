@@ -58,7 +58,7 @@ git push --set-upstream origin master
 
 Debian
 ```sh
-sudo apt install vim htop ffmpeg exiftool screen binwalk basez qpdf nmap traceroute neofetch wireshark smartmontools 
+sudo apt install curl vim htop ffmpeg exiftool screen binwalk basez qpdf nmap traceroute neofetch wireshark smartmontools gparted
 ```
 
 Arch
