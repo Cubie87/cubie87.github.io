@@ -124,7 +124,7 @@ options hid_apple swap_opt_cmd=1
 
 ## Kali
 
-When installing Kali Linux on a MacbookPro12,1 using Rufus, write in MBR, DD mode, not ISO
+When installing Kali Linux on a MacbookPro12,1 using Rufus, write in GPT, DD mode, not ISO
 
 ## Misc Windows Commands
 
