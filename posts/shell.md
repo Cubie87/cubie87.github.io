@@ -53,20 +53,79 @@ git remote add origin https://repo/address
 git push --set-upstream origin master
 ```
 
+### Change around Mac's key layout
 
-## Frequently used packages
+This swaps `fn` with `ctrl`, and swaps `alt` with `meta`. It also changes function keys to default to F1-12 as opposed to brightness/etc.
 
-Debian
+```sh
+sudo vim /etc/modprobe.d/hid_apple.conf
+
+# append this to file
+options hid_apple fnmode=2
+options hid_apple swap_fn_leftctrl=1
+options hid_apple swap_opt_cmd=1
+
+# regenerate initramfs
+# debian
+#sudo update-initramfs -u
+# arch
+#sudo mkinitcpio -p linux
+```
+
+## Debian
+
+### Kali Install
+
+When installing Kali Linux on a MacbookPro12,1 using Rufus, write in GPT, DD mode, not ISO
+
+### Samba Share Setup
+
+```sh
+sudo apt install samba
+mkdir ~/share
+
+sudo vim /etc/samba/smb.conf
+
+## append
+[share]
+    comment = Samba Shared Folder
+    path = /home/[username]/share
+    read only = no
+    browsable = yes
+# write exit file
+
+sudo service smbd restart
+sudo ufw allow samba
+
+sudo smbpasswd -a [user]
+```
+
+### Static IP 
+
+```sh
+sudo vim /etc/network/interfaces
+
+## change your default ethernet interface (eno0 for this example)
+auto eno0
+iface eno0 inet static
+    address 192.168.X.Y
+    netmask 255.255.255.0
+    gateway 192.168.X.X
+# use whatever your network uses
+# write exit
+```
+
+### Python pip fix
+
+```sh
+sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+```
+
+
+### Frequently used packages
+
 ```sh
 sudo apt install curl vim htop ffmpeg exiftool screen binwalk basez qpdf nmap traceroute neofetch wireshark smartmontools gparted
-```
-
-Arch
-```sh
-sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch wireshark-qt curl wget smartmontools
-```
-```sh
-sudo yay -S basez ulauncher 
 ```
 
 ## Arch
@@ -105,26 +164,14 @@ sudo systemctl enable sddm
 sudo systemctl start sddm
 ```
 
-### Change around Mac's god awful modifier key layout
+### Frequently used packages
 
 ```sh
-sudo vim /etc/modprobe.d/hid_apple.conf
-
-# append this to file
-options hid_apple fnmode=2
-options hid_apple swap_fn_leftctrl=1
-options hid_apple swap_opt_cmd=1
-
-# regenerate initramfs
-# debian
-#sudo update-initramfs -u
-# arch
-#sudo mkinitcpio -p linux
+sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch wireshark-qt curl wget smartmontools
 ```
-
-## Kali
-
-When installing Kali Linux on a MacbookPro12,1 using Rufus, write in GPT, DD mode, not ISO
+```sh
+sudo yay -S basez ulauncher 
+```
 
 ## Misc Windows Commands
 
