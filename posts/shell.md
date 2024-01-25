@@ -125,7 +125,7 @@ sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MA
 ### Frequently used packages
 
 ```sh
-sudo apt install curl vim htop ffmpeg exiftool screen binwalk basez qpdf nmap traceroute neofetch wireshark smartmontools gparted
+sudo apt install curl wget vim htop screen ffmpeg gparted exiftool binwalk basez qpdf nmap traceroute neofetch wireshark smartmontools 
 ```
 
 ## Arch
