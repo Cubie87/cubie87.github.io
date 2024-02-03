@@ -150,7 +150,7 @@ Fix pygmentize
 ```sh
 pip3 install pygments
 # add to path if not already
-#PATH="$PATH:/home/[USERNAME]]/.local/bin"
+#export PATH="$PATH:/home/[USERNAME]/.local/bin"
 pygmentize -V
 ```
 
