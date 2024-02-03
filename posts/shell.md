@@ -132,11 +132,16 @@ sudo apt install curl wget vim htop screen ffmpeg gparted exiftool binwalk basez
 ### LaTeX Installation
 
 ```sh
+# add keyring
 curl -fsSL https://miktex.org/download/key | sudo tee /usr/share/keyrings/miktex-keyring.asc > /dev/null
+# add source
 echo "deb [signed-by=/usr/share/keyrings/miktex-keyring.asc] https://miktex.org/download/ubuntu jammy universe" | sudo tee /etc/apt/sources.list.d/miktex.list
+# install
 sudo apt-get update
 sudo apt-get install miktex
+# finish install
 miktexsetup finish 
+# configure to download packages as needed
 initexmf --set-config-value="[MPM]AutoInstall=1"
 ```
 
@@ -167,7 +172,7 @@ Once installed chroot in and install the following before exiting out of the ins
 
  - Display Server: Xorg
     - `sudo pacman -Ss xf86-video-intel` (for Macbook Pro 12,1)
- - DE: KDE Plasma
+ - DE: KDE Plasma (with Konsole as terminal window, and of course vim)
     - `sudo pacman -S sddm plasma-desktop konsole vim`
  - Display Scaling
     - `sudo pacman -S kscreen`
