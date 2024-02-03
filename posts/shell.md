@@ -128,6 +128,13 @@ sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MA
 sudo apt install curl wget vim htop screen ffmpeg gparted exiftool binwalk basez qpdf nmap traceroute neofetch wireshark smartmontools 
 ```
 
+
+### LaTeX compile tools
+
+```sh
+sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra 
+```
+
 ## Arch
 
 Before installing, refresh pacman keys cause the ones in the iso were out of date.
