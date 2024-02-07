@@ -135,7 +135,7 @@ sudo apt install curl wget vim htop screen ffmpeg gparted exiftool binwalk basez
 # add keyring
 curl -fsSL https://miktex.org/download/key | sudo tee /usr/share/keyrings/miktex-keyring.asc > /dev/null
 # add source
-echo "deb [signed-by=/usr/share/keyrings/miktex-keyring.asc] https://miktex.org/download/ubuntu jammy universe" | sudo tee /etc/apt/sources.list.d/miktex.list
+echo "deb [signed-by=/usr/share/keyrings/miktex-keyring.asc] https://miktex.org/download/debian bookworm universe" | sudo tee /etc/apt/sources.list.d/miktex.list
 # install
 sudo apt-get update
 sudo apt-get install miktex
@@ -143,6 +143,8 @@ sudo apt-get install miktex
 miktexsetup finish 
 # configure to download packages as needed
 initexmf --set-config-value="[MPM]AutoInstall=1"
+# install pdflatex
+sudo apt install texlive-latex-base
 ```
 
 Fix pygmentize
