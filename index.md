@@ -17,6 +17,8 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 ## Blog Posts
 
+[2024 - Macbook Pro A1708 Repair](posts/2024-a1708/repair.md)
+
 [2024 - Unifi AP Flashing (OpenWRT)](posts/2024-unifi/unifi.md)
 
 [2023 - VISCA over IP](posts/2023-viscaip/viscaOverIP.md)
