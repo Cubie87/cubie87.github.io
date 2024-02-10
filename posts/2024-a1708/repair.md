@@ -51,8 +51,9 @@ However, `PPBUS_G3H/PPVBAT_G3H_CHGR_REG` is not present. Measuring resistance sh
 ![f7000 and c7050](c7050.png)
 (Photo credit Louis Rossmann)
 
-It doesn't appear to be the Capacitor C7050, or C6445. I know this cause I de-soldered and re-soldered these components (painfully). I also managed to accidently knock off C8187 while removing C6445, which is unfortunate which hopefully will be fine. The system still draws 0.4W, so I assume it is fine.
+It doesn't appear to be the Capacitor C7050, or C6445. I know this cause I de-soldered and re-soldered these components (painfully). I also managed to accidently knock off C8187 while removing C6445, which is unfortunate which hopefully will be fine. The system still draws 0.4W, so I assume it is fine. I started with these components as they appear to be common failure points.
 
+![c6445](c6445.png)
 
 I haven't been able to inject voltage yet to detect the issue with a thermal camera, but this would be the next step.
 
