@@ -5,6 +5,7 @@
 Model Number:
 - A1708
 - EMC 3164
+- 820-00875
 - MacBookPro14,1
 - 13-inch, 2017, Two Thunderbolt 3 ports
 

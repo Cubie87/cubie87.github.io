@@ -72,6 +72,10 @@ See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga) but tldr is that it works
 
 Note that TB Daisychaining has not been tested, ~~nor has using that downstream TB port as a display output.~~ Downstream TB Port as a display works, but can shake sometimes like VGA style momentary distortions. Unsure if it's a signal issue of that cable or the laptop.
 
+**Please note!!!** My AMD Framework Laptop does not play nice with WD19TB Firmware 01.00.24/01.00.36! It either doesn't recognise, or intermittently recognises, or works without issue, but next time you use the \*exact same dock\* in the \*exact same configuration\* it might not work. 
+
+To revert firmware on Dell, run the firmware update utility from powershell with the `/f` flag. Eg: `.\DellDockFirmwarePackage_WD19_WD22_Series_HD22_01.00.16.exe /f`. Note that I'm running the 01.00.16 firmware update utility as I want the end resulting dock to be on firmware 01.00.16.
+
 #### General USB 4 Thoughts
 
 USB 4 has a bunch of "optional" features from Thunderbolt that _can_ be implemented. I'm still unsure as to exactly which ones are implemented in the FW.
