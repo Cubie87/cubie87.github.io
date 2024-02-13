@@ -66,6 +66,8 @@ Starting at 1V and checking all the capacitors connected to `PPVBAT_G3H_CHGR_REG
 
 Well, at least I know where the issue is now.
 
+Note that I used my finger as a substitute thermal camera. Worked well enough for this purpose at least hehe.
+
 ![dead cap found](c6465.png)
 
 I ripped off the capacitor and cleaned up the solder pads. (I should clarify, I de-soldered the capacitor)
@@ -80,7 +82,7 @@ I re-assembled the whole machine and wiped it (as requested from the seller).
 
 ![first boot (in my hands at least)](repairedBoot.png)
 
-Most of the resources utilised to action this repair is by Louis Rossmann. A very similar diagnosis process is covered [here](https://www.youtube.com/watch?v=S8rdaJQQVqg)
+Most of the resources utilised to action this repair is by Louis Rossmann. A very similar diagnosis process is covered [here](https://www.youtube.com/watch?v=S8rdaJQQVqg). You might recognise the "owie!" test in that video, was the main inspiration for my own "owie!" test.
 
 ## Dead USB Controller
 
