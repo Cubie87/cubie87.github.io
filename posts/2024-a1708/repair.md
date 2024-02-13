@@ -45,7 +45,7 @@ Disassembled the unit to find out more.
 
 ### PP busses
 
-Utilising online resources and a multimeter, when plugged in, `PP3V3_G3H` is present on the USB C port farther away from the hinge, but the USB controller closer to the hinge seems to be boot looping at the voltage level.
+Utilising online resources (mostly Louis Rossmann) and a multimeter, when plugged in, `PP3V3_G3H` is present on the USB C port farther away from the hinge, but the USB controller closer to the hinge seems to be boot looping at the voltage level.
 
 However, `PPBUS_G3H/PPVBAT_G3H_CHGR_REG` is not present. Measuring resistance shows that there is a 1.4 Ohm short to ground on the rail somewhere. I'm unsure whether or not it's before or after the fuse (F7000), so it's been difficult to diagnose/troubleshoot.
 
@@ -79,6 +79,8 @@ Even better news was after placing it back in the chassis and plugging it in the
 I re-assembled the whole machine and wiped it (as requested from the seller).
 
 ![first boot (in my hands at least)](repairedBoot.png)
+
+Most of the resources utilised to action this repair is by Louis Rossmann. A very similar diagnosis process is covered [here](https://www.youtube.com/watch?v=S8rdaJQQVqg)
 
 ## Dead USB Controller
 
