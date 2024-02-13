@@ -60,7 +60,7 @@ I haven't been able to inject voltage yet to detect the issue with a thermal cam
 
 ## Thermal Diagnosis
 
-I borrowed a lab power supply from work, and started injecting voltage at the C7050 solder pads (I destroyed the capacitor C7050, hoping it's still works).
+I borrowed a lab power supply from work, and started injecting voltage at the C7050 solder pads (I destroyed the capacitor C7050, hoping the voltage bus still works).
 
 Starting at 1V and checking all the capacitors connected to `PPVBAT_G3H_CHGR_REG`, nothing seemed warm. Moving onto `PPBUS_G3H`, nothing appeared warm either, so I upped the voltage to 1.7V. Feeling around the board, the C6465 Capacitor was extremely hot to the touch, so much so that I felt the need to run my finger under cold water in case it burnt.
 
@@ -68,7 +68,7 @@ Well, at least I know where the issue is now.
 
 ![dead cap found](c6465.png)
 
-I ripped off the capacitor and cleaned up the solder pads.
+I ripped off the capacitor and cleaned up the solder pads. (I should clarify, I de-soldered the capacitor)
 
 ## Repaired
 
@@ -87,4 +87,4 @@ While I was previously probing around on the board, trying to establish if `PP3V
 
 ## Stability Testing
 
-Considering I just ripped off two capacitors (C6465 cause it was dead, and C7050 cause I killed it while de-soldering), it would be prudent to test the stability of the voltage bus.
+Considering I just ripped off two capacitors (C6465 cause it was dead, and C7050 cause I killed it while de-soldering), it would be prudent to test the stability of the voltage bus. This is ongoing as I write this.
