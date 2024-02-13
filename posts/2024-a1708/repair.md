@@ -60,4 +60,31 @@ I haven't been able to inject voltage yet to detect the issue with a thermal cam
 
 ## Thermal Diagnosis
 
-to be updated soon.
+I borrowed a lab power supply from work, and started injecting voltage at the C7050 solder pads (I destroyed the capacitor C7050, hoping it's still works).
+
+Starting at 1V and checking all the capacitors connected to `PPVBAT_G3H_CHGR_REG`, nothing seemed warm. Moving onto `PPBUS_G3H`, nothing appeared warm either, so I upped the voltage to 1.7V. Feeling around the board, the C6465 Capacitor was extremely hot to the touch, so much so that I felt the need to run my finger under cold water in case it burnt.
+
+Well, at least I know where the issue is now.
+
+![dead cap found](c6465.png)
+
+I ripped off the capacitor and cleaned up the solder pads.
+
+## Repaired
+
+Plugging the system back in now, it draws 14+W from the wall, and `PPBUS_G3H` measured around 12.8V, which is excellent news.
+
+Even better news was after placing it back in the chassis and plugging it in there, it turned on without issue and loaded into the login screen!
+
+I re-assembled the whole machine and wiped it (as requested from the seller).
+
+![first boot (in my hands at least)](repairedBoot.png)
+
+## Dead USB Controller
+
+While I was previously probing around on the board, trying to establish if `PP3V3_G3H` was present (the precursor voltage bus to `PPBUS_G3H`), I found that one of the USB controllers was boot looping at the voltage level. Now that the laptop is fixed, I can indeed confirm that the USB controller closer to the hinge is dead and cannot charge the laptop.
+
+
+## Stability Testing
+
+Considering I just ripped off two capacitors (C6465 cause it was dead, and C7050 cause I killed it while de-soldering), it would be prudent to test the stability of the voltage bus.
