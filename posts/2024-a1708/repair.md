@@ -84,6 +84,23 @@ I re-assembled the whole machine and wiped it (as requested from the seller).
 
 Most of the resources utilised to action this repair is by Louis Rossmann. A very similar diagnosis process is covered [here](https://www.youtube.com/watch?v=S8rdaJQQVqg). You might recognise the "owie!" test in that video, was the main inspiration for my own "owie!" test.
 
+
+## Photos
+
+Here's a photoshoot of the repaired system.
+
+
+![c7050 solder pads](solder1.png)
+
+![c6465 solder pads](solder2.png)
+
+![c6445 solder pads](solder3.png)
+
+![whole system overview](solderspots.png)
+
+Note the locations that were soldered.
+
+
 ## Dead USB Controller
 
 While I was previously probing around on the board, trying to establish if `PP3V3_G3H` was present (the precursor voltage bus to `PPBUS_G3H`), I found that one of the USB controllers was boot looping at the voltage level. Now that the laptop is fixed, I can indeed confirm that the USB controller closer to the hinge is dead and cannot charge the laptop.
