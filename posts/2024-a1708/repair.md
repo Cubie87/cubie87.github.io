@@ -109,3 +109,41 @@ While I was previously probing around on the board, trying to establish if `PP3V
 ## Stability Testing
 
 Considering I just ripped off two capacitors (C6465 cause it was dead, and C7050 cause I killed it while de-soldering), it would be prudent to test the stability of the voltage bus. This is ongoing as I write this.
+
+
+
+## Apple Store
+
+Overall nothing's changed from my past experiences with interacting there. The people are really nice and friendly, but heavily constrained by what Apple allows them to do.
+
+The 2016-2019(?) models of Macbook Pros and Macbooks (not sure if Air was ever affected) had issues due to their butterfly keyboard, so there is a service program to repair them if they are ever dodgy. Whilst this laptop didn't have any keys that was outright dead/malfunctioning, all of the function keys were extremely sticky feeling, so I booked in for a repair.
+
+Going in, explained the problem, they were more than happy to replace a few select keys, and a few extra, for some reason, but refused to replace the keyboard in its entirety, as a 5 year old laptop is deprecated already. A very green company indeed, Apple.
+
+After collecting the device, I noticed that this had somehow made the problem worse, now F11 genuinely isn't responding properly. I asked about this in the store, but they refused to re-investigate unless I re-book another appointment, despite being able to (and having) looked up the service details from just then.
+
+They also managed to kill the keyboard backlight somehow.
+
+Back we go I guess.
+
+## Apple Store II, Electric Boogaloo
+
+Booked appointment
+
+\*record scratch*
+
+Upon reboot, backlight works, which is good. 
+
+On second thought, wouldn't there be a cheaper way?
+
+## Keycap Repair
+
+I looked online and there's plenty of MBP 2017 era keycap removal videos/guides online, so I followed those. There didn't seem to be anything wrong with the keycap or the membrene, it was extremely clean.
+
+![f11 key](f11.png)
+
+Looking closer, the membrene is fully functional when the key is removed, so it appeared that the key nubbin in the middle of the plastic cap wasn't designed to spec, and did not protrude out enough to poke the membrene hard enough, to register a keystroke. The solution here is to make the protrusion taller.
+
+How is this done? I used thin layers of superglue to do this. Put some superglue on the page, use tweezers to move the superglue onto the cap, and ensure that it is mostly flat. I repeated this twice with the F11 key, and once with the F12 key, and now they are fully functional without any issues.
+
+Beat that, Apple!
