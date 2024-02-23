@@ -138,11 +138,11 @@ On second thought, wouldn't there be a cheaper way?
 
 ## Keycap Repair
 
-I looked online and there's plenty of MBP 2017 era keycap removal videos/guides online, so I followed those. There didn't seem to be anything wrong with the keycap or the membrene, it was extremely clean.
+I looked online and there's plenty of MBP 2017 era keycap removal videos/guides online, so I followed those. There didn't seem to be anything wrong with the keycap or the membrane, it was extremely clean.
 
 ![f11 key](f11.png)
 
-Looking closer, the membrene is fully functional when the key is removed, so it appeared that the key nubbin in the middle of the plastic cap wasn't designed to spec, and did not protrude out enough to poke the membrene hard enough, to register a keystroke. The solution here is to make the protrusion taller.
+Looking closer, the membrane is fully functional when the key is removed, so it appeared that the key nubbin in the middle of the plastic cap wasn't designed to spec, and did not protrude out enough to poke the membrane hard enough, to register a keystroke. The solution here is to make the protrusion taller.
 
 How is this done? I used thin layers of superglue to do this. Put some superglue on the page, use tweezers to move the superglue onto the cap, and ensure that it is mostly flat. I repeated this twice with the F11 key, and once with the F12 key, and now they are fully functional without any issues.
 
