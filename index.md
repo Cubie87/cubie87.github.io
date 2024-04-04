@@ -10,7 +10,7 @@ I [have mild regrets](posts/s23bloat.md) using a Samsung S23.
 
 I'm a datahoarder, with a 18TB storage server running on TrueNAS Scale (5x4TB raidz1 + 2x2TB mirror).
 
-I run a compute server which hosts [Pandora](posts/pandora.md), PiHole, a Tailscale node, and occasionally minecraft servers.
+I run a compute server which hosts [Pandora](posts/pandora.md), PiHole, a vpn node, and occasionally minecraft servers.
 
 I've also written a very basic, poorly implemented, [Rocket Flight Computer](https://github.com/Cubie87/L2RocketSoftware) using the Arduino IDE on a Teensy board to log data for a Tripoli Level 2 Certification Flight. 
 
