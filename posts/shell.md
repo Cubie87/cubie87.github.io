@@ -72,6 +72,17 @@ options hid_apple swap_opt_cmd=1
 #sudo mkinitcpio -p linux
 ```
 
+### GRUB Timeout
+
+timeout=0 removes the need to have a keyboard plugged in during boot.
+
+```sh
+sudo vim /etc/default/grub
+
+# change
+GRUB_TIMEOUT=0
+```
+
 ## Debian
 
 ### Kali Install
