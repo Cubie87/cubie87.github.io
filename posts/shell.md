@@ -158,7 +158,7 @@ miktexsetup finish
 # configure to download packages as needed
 initexmf --set-config-value="[MPM]AutoInstall=1"
 # install pdflatex
-sudo apt install texlive-latex-base
+sudo apt install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
 ```
 
 Fix pygmentize
