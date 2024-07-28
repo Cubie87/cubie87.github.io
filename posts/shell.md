@@ -139,7 +139,7 @@ sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MA
 ### Frequently used packages
 
 ```sh
-sudo apt install curl wget vim htop screen ffmpeg gparted exiftool binwalk basez qpdf nmap traceroute neofetch wireshark smartmontools 
+sudo apt install curl wget vim htop screen sysstat neofetch smartmontools gparted ffmpeg exiftool binwalk basez qpdf nmap traceroute wireshark 
 ```
 
 
