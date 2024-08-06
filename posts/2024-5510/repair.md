@@ -8,7 +8,7 @@ This is a Dell Inspiron 5510.
 
 A friend's laptop was noticibly bent (presumed battery, keyboard deck was bent upwards towards screen), and keys had started to die (c, v, b, f, g, r, t) and would not respond. Troubleshooted to be a hardware issue by reinstalling OS (no change) and plugging in external keyboard (keys work on external keyboard).
 
-As they laptop was considered a writeoff (outside Dell's 1 year warranty), they decided to give it to me.
+As the laptop was considered a writeoff (outside Dell's 1 year warranty), they decided to give it to me.
 
 ## Fix
 
@@ -22,7 +22,7 @@ Dell support was very nice, and other than leaking my friend's details when aski
 
 ### Quote
 
-The quote provided was AUD$220 for a repair. This was more than I was willing to spend (+$\infty$% more than what it cost for me to acquire the laptop), so I emailed back asking if it was covered under Australian Consumer Law.
+The quote provided was AUD\$220 for a repair. This was more than I was willing to spend (+$\infty$% more than what it cost for me to acquire the laptop), so I emailed back asking if it was covered under Australian Consumer Law.
 
 Surprisingly, they were happy to cover it assuming no damage on the unit, and soon after emailed me a shipping label. We'll get back to this shipping label.
 
