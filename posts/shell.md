@@ -1,24 +1,28 @@
 # My Setup and Other Things
 
-I daily windows, so WSL, but am actively trying out Linux distros (feel free to recommend!)
+I daily windows, so WSL, and am actively working to move to Linux (debian) for my daily driver (laptop).
 
 Current list of issues stopping me from moving to Linux:
  - CAD Program Support (VM Solvable, but input latency issues which are suboptimal but acceptable)
  - OneDrive Files on Demand (soon to be phased out of my life)
- - AutoHotKey alternative
+ - AutoHotKey alternative (I utilise hotstrings extensively)
  - Notepad++ alternative
  - Logi Options+ alternative
 
-## Shell
+## Basic linux setup
 
-My shell is zsh running oh-my-zsh with powerlevel10k and zsh-autosuggestions
-
-Install zsh first using whatever package manager the distro uses. Then run the following:
 
 ```sh
-## Install zsh using package manager
+# basic programs that I use
+sudo apt install curl wget vim htop screen sysstat neofetch smartmontools gparted ffmpeg git
+# ctf tools
+sudo apt install exiftool binwalk basez qpdf nmap traceroute wireshark 
 
-# install oh-my-zsh
+
+# install zsh
+sudo apt install zsh
+
+# install oh-my-zsh for customisation
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install powerlevel10k and set as zsh theme
@@ -29,23 +33,17 @@ sed -i 's/ZSH_THEME=.*/ZSH_THEME=powerlevel10k\/powerlevel10k/' ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sed -i "s/^plugins=(/plugins=(\n    zsh-autosuggestions\n    /" ~/.zshrc
 
-# install zsh-syntax-highlighting using package manager
+# install zsh-syntax-highlighting
+sudo apt install zsh-syntax-highlighting
 echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-```
 
 
-### Set vim to be the default terminal editor
-Debian thing
-
-```sh
+# set up vim to be default terminal editor
 sudo update-alternatives --config editor
-```
-
-### Set vim to be git's default editor
-
-```sh
+# vim default git editor
 git config --global core.editor "vim"
 ```
+
 
 ### Set up a git repo
 
@@ -56,7 +54,7 @@ git remote add origin https://repo/address
 git push --set-upstream origin master
 ```
 
-### Change around Mac's key layout
+### Change Around Mac's God Awful Key Layout
 
 This swaps `fn` with `ctrl`, and swaps `alt` with `meta`. It also changes function keys to default to F1-12 as opposed to brightness/etc.
 
@@ -85,8 +83,6 @@ sudo vim /etc/default/grub
 # change
 GRUB_TIMEOUT=0
 ```
-
-## Debian
 
 ### Kali Install
 
@@ -136,13 +132,6 @@ sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MA
 ```
 
 
-### Frequently used packages
-
-```sh
-sudo apt install curl wget vim htop screen sysstat neofetch smartmontools gparted ffmpeg exiftool binwalk basez qpdf nmap traceroute wireshark 
-```
-
-
 ### LaTeX Installation
 
 ```sh
@@ -168,51 +157,6 @@ pip3 install pygments
 # add to path if not already
 #export PATH="$PATH:/home/[USERNAME]/.local/bin"
 pygmentize -V
-```
-
-## Arch
-
-Before installing, refresh pacman keys cause the ones in the iso were out of date.
-
-```sh
-pacman-key --refresh-keys
-```
-
-I used archinstall, couldn't get bootloaders to work on my Mac (I personally blame the mac).
-
-```sh
-archinstall
-```
-
-Once installed chroot in and install the following before exiting out of the install environment.
-
- - Display Server: Xorg
-    - `sudo pacman -Ss xf86-video-intel` (for Macbook Pro 12,1)
- - DE: KDE Plasma (with Konsole as terminal window, and of course vim)
-    - `sudo pacman -S sddm plasma-desktop konsole vim`
- - Display Scaling
-    - `sudo pacman -S kscreen`
- - Wifi
-    - `sudo pacman -S plasma-nm`
- - Audio
-    - `sudo pacman -S plasma-pa`
- - Shell: [zsh](#shell)
-
-Reboot
-
-Start DE:
-```sh
-sudo systemctl enable sddm
-sudo systemctl start sddm
-```
-
-### Frequently used packages
-
-```sh
-sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch wireshark-qt curl wget smartmontools
-```
-```sh
-sudo yay -S basez ulauncher 
 ```
 
 ## Misc Windows Commands
@@ -295,3 +239,48 @@ Then, Task Manager, restart File Explorer.
 
 
 
+
+## Arch (legacy)
+
+Before installing, refresh pacman keys cause the ones in the iso were out of date.
+
+```sh
+pacman-key --refresh-keys
+```
+
+I used archinstall, couldn't get bootloaders to work on my Mac (I personally blame the mac).
+
+```sh
+archinstall
+```
+
+Once installed chroot in and install the following before exiting out of the install environment.
+
+ - Display Server: Xorg
+    - `sudo pacman -Ss xf86-video-intel` (for Macbook Pro 12,1)
+ - DE: KDE Plasma (with Konsole as terminal window, and of course vim)
+    - `sudo pacman -S sddm plasma-desktop konsole vim`
+ - Display Scaling
+    - `sudo pacman -S kscreen`
+ - Wifi
+    - `sudo pacman -S plasma-nm`
+ - Audio
+    - `sudo pacman -S plasma-pa`
+ - Shell: [zsh](#shell)
+
+Reboot
+
+Start DE:
+```sh
+sudo systemctl enable sddm
+sudo systemctl start sddm
+```
+
+### Frequently used packages
+
+```sh
+sudo pacman -S vim htop ffmpeg perl-image-exiftool screen binwalk qpdf nmap traceroute neofetch wireshark-qt curl wget smartmontools
+```
+```sh
+sudo yay -S basez ulauncher 
+```
