@@ -22,7 +22,7 @@ Dell support was very nice, and other than leaking my friend's details when aski
 
 ### Quote
 
-The quote provided was AUD\$220 for a repair. This was more than I was willing to spend (+$\infty$% more than what it cost for me to acquire the laptop), so I emailed back asking if it was covered under Australian Consumer Law.
+The quote provided was AUD 220 for a repair. This was more than I was willing to spend (+$\infty$% more than what it cost for me to acquire the laptop), so I emailed back asking if it was covered under Australian Consumer Law.
 
 Surprisingly, they were happy to cover it assuming no damage on the unit, and soon after emailed me a shipping label. We'll get back to this shipping label.
 
