@@ -16,7 +16,7 @@ Current list of issues stopping me from moving to Linux:
 # basic programs that I use
 sudo apt install curl wget vim htop screen sysstat neofetch smartmontools gparted ffmpeg git
 # ctf tools
-sudo apt install exiftool binwalk basez qpdf nmap traceroute wireshark 
+sudo apt install exiftool binwalk basez qpdf nmap traceroute wireshark python-is-python3 python3-pip netcat
 
 
 # install zsh
@@ -32,6 +32,8 @@ sed -i "s/^plugins=(/plugins=(\n    zsh-autosuggestions\n    /" ~/.zshrc
 # install zsh-syntax-highlighting
 sudo apt install zsh-syntax-highlighting
 echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+# set as default shell
+chsh -s $(which zsh)
 
 
 # set up vim to be default terminal editor
@@ -41,7 +43,14 @@ git config --global core.editor "vim"
 ```
 
 
-### Set up a git repo
+### Set up git
+
+```sh
+# install repo
+# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+`gh auth login`
+`gh auth setup-git`
+```
 
 ```sh
 git init
