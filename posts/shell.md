@@ -14,9 +14,9 @@ Current list of issues stopping me from moving to Linux:
 
 ```sh
 # basic programs that I use
-sudo apt install curl wget vim htop screen sysstat neofetch smartmontools gparted ffmpeg git
+sudo apt install curl wget vim htop screen sysstat neofetch smartmontools gparted ffmpeg git unzip
 # ctf tools
-sudo apt install exiftool binwalk basez qpdf nmap traceroute wireshark python-is-python3 python3-pip netcat
+sudo apt install exiftool binwalk basez qpdf nmap traceroute wireshark python-is-python3 python3-pip netcat ncat 
 
 
 # install zsh
