@@ -12,6 +12,7 @@ theme: minima
 # header pages
 header_pages:
   - index.md
+  - posts/shell.md
 
 
 # plugins for the theme
