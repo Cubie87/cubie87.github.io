@@ -42,6 +42,12 @@ sudo update-alternatives --config editor
 git config --global core.editor "vim"
 ```
 
+### Change Grub Timeout
+Grub's timeout. If >0, requires keyboard to be connected when booting. If =0, doesn't
+```sh
+sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+sudo update-grub
+```
 
 ### Set up git
 
