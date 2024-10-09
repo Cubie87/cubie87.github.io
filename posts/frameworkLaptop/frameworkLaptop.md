@@ -6,23 +6,17 @@ I have been considering replacing my current laptop, but to fully understand why
 
 ## My Computing Setup
 
-Unlike many people in this field, I do not have a desktop as my primary computer. I used to a few years ago, but when I replaced my 13" Macbook Pro (2015) (MacbookPro 12,1) (A1502) with an XPS 17 9700 (in late 2020), I also replaced my desktop with the XPS laptop, as it was powerful enough to fulfil both roles, and I did not need the excessive compute capability. The desktop was then turned into a storage server, which I have been utilising to this day. 
-
-Why a laptop as opposed to a desktop? As a student I always need a laptop for studies, so will always have one. Thus, as the laptop was non-negotiable, the desktop had to go. Also desktops can be significantly more expensive than laptops, as there is not only is there the upfront cost, but you also have to consider the ongoing cost in terms of power bills. Where you live the power may not be considerable, but it is significant in my region.
-
-The XPS 17 9700 (i7-10750H, RAM 16GB, SSD 512GB, GPU 1650 Ti), was plenty for my needs, but was quite large and unwieldy in day to day use. I was tossing up between the 15" and 17", and had decided to go with the 17" based on the better performance, thermals, and larger battery. Furthermore, all my previous computers were below 14", and I wanted to try out how a larger computer would go. The XPS was also a 17.0" screen (as opposed to 17.3" in some gaming laptops), which wasn't _too_ much larger than the 15.6" XPS 15, so did not consider the size difference to be too drastic. Unfortunately I was wrong in this aspect, but it did make for a great portable desktop replacement.
+I don't game, so my primary device is a laptop, as opposed to a desktop. By utilising a dock, I get almost all the benefits of a desktop (good ergonomics, ports, high quality monitors, keyboard, etc), with the benefits of a laptop (battery, portability as required, etc). Acknowledgement regarding performance and thermals, but none of my workload is intensive enough to warrant a desktop.
 
 #### Laptop Docks
 
-Laptops however, do suffer greatly in terms of usability, but there has been a solution that has existed for many years in the business world, which was seldom used in home computer, and that is the use of laptop docks. Docks are essentially overgrown USB hubs, allowing display, usb, audio, and networking, to be passed through to the laptop over a single connector, along with charging the laptop. However, up to this point, most of them were clunky ones based on massive connectors on the bottom of laptops, but notable was the development of Thunderbolt 3 enabled a much easier solution over a single cable.
+Laptop docks are amazing and I highly recommend them for most people, due to the benefits available outlined above. [This love letter](https://www.youtube.com/watch?v=Pc31L3zJiaU) from Technology Connections outlines them well, and match my priorities. 
 
-I won't go on too much about the benefit of docks, but essentially _I_ find them to be an excellent solution to the problems of using a laptop as a desktop replacement. To replace my desktop _and_ laptop with the XPS 17, I bought an old Dell WD15 dock, allowing all my previous peripherals (keyboard, mouse, 2 displays, networking, etc) to work on the new machine. This worked for the longest time, but I eventually updated to a WD19TB dock, enabling higher bandwidth throughout and PCIe passthrough, but otherwise keeping most of the functionality the same.
-
-The purchase of a WD19TB and it's ability for PCIe passthrough also led to the purchase of an eGPU enclosure, specifically a Gigabyte Aorus Gaming Box (GTX 1070). I didn't really need this compute capability, but the ability to break out Thunderbolt 3's PCIe into a full sized PCIe for PCIe cards would be great. I have some SAS drives (SAS vs SATA interface), which requires a PCIe card (LSI 9211-8i) to interface with them. An eGPU enclosure would be perfect for this application.
+The dock of choice for me is the Dell WD19TB, which has the added benefit of downstream Thunderbolt devices as supported with an additional USB C/TB3 port.
 
 # Buying a New Laptop
 
-The portability issues with the XPS, along with a scholarship opportunity from my studies, aligned in such a way that I decided to refresh my laptop. The continual progress of technology allowed a newer, lower power and more portable computer, to be almost double the performance of the XPS in CPU (with GPU remaining about the same). Having used the XPS laptop for a while now, I had the following requirements for the new laptop:
+The portability (or lack thereof) with the XPS 17 that I was taking issue with, along with a scholarship opportunity from my studies, aligned in such a way that I decided to refresh my laptop. The continual progress of technology allowed a newer, lower power and more portable computer, to be almost double the performance of the XPS in CPU (with GPU remaining about the same). Having used the XPS laptop for a while now, I had the following requirements for the new laptop:
 
  - AMD (performance per watt, Win10 compatibility)
  - 16:10 screen
@@ -66,11 +60,8 @@ The screen however, is a different issue. In all the video reviews, you can see 
 
 #### Thunderbolt Compatibility on USB 4
 
-~~All functionality with the Dell WD19TB dock works without issue.~~ Note that the dock firmware is on `01.00.32, 01.00.16` (Released on 25 May, 2023), and you may have a different experience on different versions. 
+Dock firmware `01.00.32, 01.00.16` (Released on 25 May, 2023) works without issue, but newer versions cause issues. Regardless of if it is to do with the USB 4 re-timers, or the dock itself, the end result is that it does not work \:\(
 
-See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga) but tldr is that it works with the WD19TB dock, and my eGPU, but you need additional AMD drivers for this to work, the FW provided drivers are not enough.
-
-Note that TB Daisychaining has not been tested, ~~nor has using that downstream TB port as a display output.~~ Downstream TB Port as a display works, but can shake sometimes like VGA style momentary distortions. Unsure if it's a signal issue of that cable or the laptop.
 
 **Please note!!!** My AMD Framework Laptop does not play nice with WD19TB Firmware 01.00.24/01.00.36! It either doesn't recognise, or intermittently recognises, or works without issue, but next time you use the \*exact same dock\* in the \*exact same configuration\* it might not work. 
 
@@ -78,21 +69,7 @@ To revert firmware on Dell, run the firmware update utility from powershell with
 
 #### General USB 4 Thoughts
 
-USB 4 has a bunch of "optional" features from Thunderbolt that _can_ be implemented. I'm still unsure as to exactly which ones are implemented in the FW.
-
-~~Furthermore, I've found that the the left USB 4 port is able to output display on HDMI and DisplayPort on the WD19TB, but using the Thunderbolt Passthrough for DisplayPort also sometimes works. Sometimes, it doesn't work, and when it does work, sometimes the DP display (not type c) to flickers quite a lot.~~
-
-~~On the right USB 4 port, it's easily able to do Dual DisplayPort (DP + DP over TB Passthrough) without issue.~~
-
-See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga) but tldr is that you need additional AMD drivers for this to work, the FW provided drivers are not enough. Otherwise looks good and a highly implemented port. Exact features are undetermined.
-
-#### PCIe Passthrough
-
-~~Unfortunately, when testing with the Aorus Gaming Box (1070), the Framework laptop did not detect a new device being plugged in (no windows "new device sound"), and indeed did not charge from the Gaming Box either. Notable is a lack of drivers that I have installed for the gaming box (mixing AMD and NVidia probably isn't the best idea, and I don't intend to use it in this state anyway), so that may contribute to the non-functionality, but I would still expect that Windows detects the new device.~~
-
-~~Further evidence of it not being functional is that the laptop does not charge from the eGPU box when plugged into it. Attempting to install drivers, the error provided is that no compatible GPU devices found.~~
-
-~~To be updated with more information soon.~~ See: [The FW AMD Driver Saga](#the-fw-amd-driver-saga) but tldr is that it needs additional AMD drivers for this to work, the FW provided drivers are not enough. Otherwise eGPU is detected and works, but doesn't appear to charge from it.
+USB 4 has a bunch of "optional" features from Thunderbolt that _can_ be implemented. I'm still unsure as to exactly which ones are implemented in the FW. Overall, for my use case, it has been without issue, other than the driver saga outlined [here](#the-fw-amd-driver-saga).
 
 #### Keyboard
 
@@ -152,21 +129,7 @@ This issue could be summarised by the enormous list of unrecognised/unknown devi
 
 #### Dock Issues
 
-The Dell WD19TB dock series, for me, is quite important, as all of my devices run through there.
-
-Originally, the issue was simply that the Ethernet port wasn't being detected. I tried installing drivers from Dell without success. This was a minor issue, so I overlooked it, as I could still use Wifi, but at reduced speed (I should talk about my network setup sometime)
-
-Later on, when the laptop was waking from sleep, sometimes it wouldn't detect the monitors I had plugged in (2x 1080p60 over DP and HDMI), so would have to power cycle the dock (not the laptop, the dock) by unplugging and replugging, for the monitors to be detected (doing so while leaving the laptop plugged in to the dock).
-
-I also encountered issues where the laptop would refuse to recognise the dock at all, instead assuming that it was just a basic 65W+ USB C Charger. Again, solved by power cycling the dock.
-
-There were also cases where the laptop wouldn't recognise any USB devices that I plugged into either the dock or the laptop.
-
-These issues were getting annoying, so I reached out to the FW Support Staff at this point.
-
-#### Boot Issues
-
-Another issue that I was experiencing with the Framework Laptop was that when booting up from a shut down state (either shut down or hibernate, as hibernate is still powered off), the startup process would halt before detecting the screen. None of the FW expansion card debug LEDs showed anything*, and the caps lock key would not function, only the Power Button LED was lit. The solution was to hold down the power button for 7s or so until the system hard powered off, before releasing, and attempting to turn it on normally again. 
+An issue that I was experiencing with the Framework Laptop was that when booting up from a shut down state (either shut down or hibernate, as hibernate is still powered off), the startup process would halt before detecting the screen. None of the FW expansion card debug LEDs showed anything*, and the caps lock key would not function, only the Power Button LED was lit. The solution was to hold down the power button for 7s or so until the system hard powered off, before releasing, and attempting to turn it on normally again. 
 
 This would usually resolve the issue, but sometimes it would persist throughout multiple restarts.
 
