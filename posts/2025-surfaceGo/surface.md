@@ -67,7 +67,7 @@ Install `zsh`, use vim, change grub timeout. Typical.
 
 One odd addition here, is utilising the [custom linux kernel for surface devices](https://github.com/linux-surface/linux-surface), which gives you a lot more features.
 
-I also installed `vlc intel-microcode amd64-microcode intel-media-va-driver intel-gpu-tools libva-intel-driver mesa-utils` mostly for hardware video enc/dec/transcode.
+I also installed `vlc intel-microcode amd64-microcode intel-media-va-driver intel-gpu-tools libva-intel-driver mesa-utils mmc-utils` mostly for hardware video enc/dec/transcode. `mmc-utils` replaces `smartmontools`.
 
 Furthermore, I removed all the Gnome bloat, the games it comes with and libreoffice.
 
@@ -119,6 +119,15 @@ I have mine set to 125%. Better than Windows fractional scaling.
 ### Gnome Extensions
 
 - Dash To Panel
+  - Position:
+    - Panel Screen Pos: Top
+    - Panel Thickness: 32px
+  - Style:
+    - Icon Margin: 2px
+    - Padding: 6px
+    - Run Indicator: Top
+    - Style (focused): solid, 2px
+    - Style (unfocussed): dashes
 - Notification Banner Reloaded
   - Hpos: Right
   - Vpos: Bottom
