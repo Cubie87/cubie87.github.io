@@ -17,6 +17,8 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 ## Blog Posts
 
+[2025 - Microsoft Surface Go Setup](posts/2025-surfaceGo/surface.md)
+
 [2024 - Dell Inspiron 5510 Repair](posts/2024-5510/repair.md)
 
 [2024 - Macbook Pro A1708 Repair](posts/2024-a1708/repair.md)
