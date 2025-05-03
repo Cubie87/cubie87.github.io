@@ -26,9 +26,19 @@ Thankfully, Ventoy was the answer, and allowed me to boot into the Debian 12 ins
 
 As it was a portable device, I installed it with LUKS Disk Encryption.
 
-As it was a touchscreen, I installed the Gnome DE without any optional features.
+As there were only 64GB of storage, I installed with no optional software.
 
 As the drive was _slow_ (eMMC, not an SSD but more akin to MicroSD or USB drives), the install took a good 30 minutes. God damn.
+
+## Lightweight GNOME
+
+Funny huh.
+
+```sh
+sudo apt install gnome-core --no-install-recommends
+sudo apt install firefox-esr --no-install-recommends
+```
+
 
 ## Get TPM working with LUKS
 
@@ -67,7 +77,7 @@ Install `zsh`, use vim, change grub timeout. Typical.
 
 One odd addition here, is utilising the [custom linux kernel for surface devices](https://github.com/linux-surface/linux-surface), which gives you a lot more features.
 
-I also installed `vlc intel-microcode amd64-microcode intel-media-va-driver intel-gpu-tools libva-intel-driver mesa-utils mmc-utils` mostly for hardware video enc/dec/transcode. `mmc-utils` replaces `smartmontools`.
+I also installed `vlc intel-microcode amd64-microcode intel-media-va-driver intel-gpu-tools mesa-utils mmc-utils` mostly for hardware video enc/dec/transcode. `mmc-utils` replaces `smartmontools`.
 
 Furthermore, I removed all the Gnome bloat, the games it comes with and libreoffice.
 
@@ -114,6 +124,12 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 ```
 
 I have mine set to 125%. Better than Windows fractional scaling.
+
+Disable gnome logout/shutdown prompts
+
+```sh
+gsettings set org.gnome.SessionManager logout-prompt false
+```
 
 
 ### Gnome Extensions
