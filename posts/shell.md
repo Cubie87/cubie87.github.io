@@ -49,13 +49,51 @@ sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo update-grub
 ```
 
+### Framework Laptop
+
+Use the [debian guide](https://wiki.debian.org/InstallingDebianOn/FrameWork/Laptop13/AMD_7040_Series) first.
+
+REMEMBER to fix display drivers FIRST!!!
+
+#### KDE Settings to change.
+
+- Appearance: Breeze Dark
+- Workspace Behaviour > General: Animation Speed: 3/4 -->
+- Workspace Behaviour > General: Clicking files or folders: Selects them
+- Workspace Behaviour > Screen Edges: Top Left, Nothing
+- Input Devices > Mouse > MX Anywhere: Enabled
+- Input Devices > Mouse > MX Anywhere: Acceleration: Flat
+- Input Devices > Mouse > MX Anywhere: Disable Invert Scroll
+- Input Devices > Mouse > MX Anywhere: Scroll Speed: 5th from the left
+- Input Devices > Mouse > MX Anywhere: Rebind buttons as you see fit
+- Input Devices > Touchpad: Tap to Click
+- Input Devices > Touchpad: Two finger tap: Right click 
+- Input Devices > Touchpad: Invert scroll direction
+- Input Devices > Touchpad: Scroll Speed 2nd from left
+- Input Devices > Touchpad: Right Click: press anywhere with 2 fingers
+- Power Management > AC Power: Disable suspend session
+
+#### Fingerprint Reader
+
+```sh
+sudo apt install fprintd libpam-fprintd
+sudo pam-auth-update
+```
+BUT remember to add this to `/etc/pam.d/sddm` after the first `auth` lines to ensure you can login.
+```sh
+#auth            something       something blah
+# fingerprint-testing stuff
+auth            [success=1 new_authtok_reqd=1 default=ignore]   pam_unix.so try_first_pass likeauth nullok
+auth            sufficient      pam_fprintd.so
+```
+
 ### Set up git
 
 ```sh
 # install repo
 # https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-`gh auth login`
-`gh auth setup-git`
+gh auth login`
+gh auth setup-git`
 ```
 
 ```sh
@@ -64,6 +102,7 @@ git pull https://repo/address
 git remote add origin https://repo/address
 git push --set-upstream origin master
 ```
+
 
 ### Change Around Mac's God Awful Key Layout
 
@@ -82,17 +121,6 @@ options hid_apple swap_opt_cmd=1
 #sudo update-initramfs -u
 # arch
 #sudo mkinitcpio -p linux
-```
-
-### GRUB Timeout
-
-timeout=0 removes the need to have a keyboard plugged in during boot.
-
-```sh
-sudo vim /etc/default/grub
-
-# change
-GRUB_TIMEOUT=0
 ```
 
 ### Kali Install
