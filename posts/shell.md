@@ -15,8 +15,6 @@ Current list of issues stopping me from moving to Linux:
 ```sh
 # basic programs that I use
 sudo apt install curl wget vim htop screen sysstat smartmontools ffmpeg git unzip dnsutils glances screenfetch
-# gui programs that I use
-sudo apt install gparted vlc 
 # ctf tools
 sudo apt install libimage-exiftool-perl binwalk basez qpdf nmap traceroute wireshark python-is-python3 python3-pip netcat-traditional ncat 
 
@@ -43,6 +41,18 @@ sudo update-alternatives --config editor
 # vim default git editor
 git config --global core.editor "vim"
 ```
+
+### GUI Programs
+Requires external repos/pgp keys that may change.
+- [Sublime Text](https://www.sublimetext.com/docs/linux_repositories.html)
+- [Firefox](https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions-recommended)
+
+```sh
+sudo apt update
+# gui programs that I use
+sudo apt install gparted vlc obs-studio firefox-nightly firefox-devedition sublime-text 
+```
+
 
 ### Change Grub Timeout
 Grub's timeout. If >0, requires keyboard to be connected when booting. If =0, doesn't
