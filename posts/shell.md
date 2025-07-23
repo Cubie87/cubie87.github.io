@@ -52,6 +52,13 @@ sudo apt update
 sudo apt install gparted vlc obs-studio firefox-nightly firefox-devedition sublime-text 
 ```
 
+### yt-dlp
+
+```sh
+cd ~
+echo '\n\n'alias :yt-dlp=\'/home/cubie/yt-dlp --no-overwrites --merge-output-format \"mkv\" --output \"'%(upload_date)s - %(title)s-%(id)s.%(ext)s'\"\'  >> .zshrc
+```
+
 
 ### Change Grub Timeout
 Grub's timeout. If >0, requires keyboard to be connected when booting. If =0, doesn't
