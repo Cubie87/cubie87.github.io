@@ -4,13 +4,12 @@ I daily windows, so WSL, and am actively working to move to Linux (debian) for m
 
 Current list of issues stopping me from moving to Linux:
  - CAD Program Support (VM Solvable, but input latency issues which are suboptimal but acceptable)
- - OneDrive Files on Demand (soon to be phased out of my life)
  - AutoHotKey alternative (I utilise hotstrings extensively)
- - Notepad++ alternative
  - Logi Options+ alternative
 
-## Basic linux setup
+I've now moved over to Debian/KDE as my daily driver!
 
+## Basic linux setup
 
 ```sh
 # basic programs that I use
@@ -97,6 +96,29 @@ BUT remember to add this to `/etc/pam.d/sddm` after the first `auth` lines to en
 # fingerprint-testing stuff
 auth            [success=1 new_authtok_reqd=1 default=ignore]   pam_unix.so try_first_pass likeauth nullok
 auth            sufficient      pam_fprintd.so
+```
+
+
+### Get Video Loopback devices working
+Need to perform MOK management
+
+```sh
+sudo apt install v4l2loopback-dkms
+openssl req -new -x509 -newkey rsa:2048 -outform DER -keyout MOK.priv -out MOK.der -nodes -days 36500 -subj "/CN=v4l2ModuleKey/"
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /lib/modules/$(uname -r)/updates/dkms/v4l2loopback.ko
+
+sudo mokutil --import MOK.der
+sudo reboot
+```
+
+At the boot screen:
+- Choose "Enroll MOK"
+- Select "Continue"
+- Choose "Yes"
+- Enter the password you set earlier
+
+```sh
+sudo modprobe v4l2loopback
 ```
 
 ### Set up git
