@@ -52,11 +52,26 @@ sudo apt update
 sudo apt install gparted vlc obs-studio firefox-nightly firefox-devedition sublime-text 
 ```
 
-### yt-dlp
+- [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
 
 ```sh
+# sudo apt install virtualbox
+sudo mkdir -p /var/lib/shim-signed/mok
+sudo openssl req -nodes -new -x509 -newkey rsa:2048 -outform DER -addext "extendedKeyUsage=codeSigning" -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der
+sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
+# sign kernel modules
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxdrv.ko
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetadp.ko
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetflt.ko
+sudo reboot
+```
+
+### yt-dlp
+
+[Download](https://github.com/yt-dlp/yt-dlp)
+```sh
 cd ~
-echo '\n\n'alias :yt-dlp=\'/home/cubie/yt-dlp --no-overwrites --merge-output-format \"mkv\" --output \"'%(upload_date)s - %(title)s-%(id)s.%(ext)s'\"\'  >> .zshrc
+echo '\n\n'alias :yt-dlp=\'/home/$USER/yt-dlp --no-overwrites --merge-output-format \"mkv\" --output \"'%(upload_date)s - %(title)s-%(id)s.%(ext)s'\"\'  >> .zshrc
 ```
 
 
@@ -90,6 +105,7 @@ REMEMBER to fix display drivers FIRST!!!
 - Input Devices > Touchpad: Scroll Speed 2nd from left
 - Input Devices > Touchpad: Right Click: press anywhere with 2 fingers
 - Power Management > AC Power: Disable suspend session
+
 
 #### Fingerprint Reader
 
@@ -128,6 +144,24 @@ At the boot screen:
 sudo modprobe v4l2loopback
 ```
 
+
+### Virtualbox
+
+[VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
+
+```sh
+# sudo apt install virtualbox
+sudo mkdir -p /var/lib/shim-signed/mok
+sudo openssl req -nodes -new -x509 -newkey rsa:2048 -outform DER -addext "extendedKeyUsage=codeSigning" -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der
+sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
+# sign kernel modules
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxdrv.ko
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetadp.ko
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetflt.ko
+sudo reboot
+```
+
+
 ### Set up git
 
 ```sh
@@ -158,10 +192,8 @@ options hid_apple swap_fn_leftctrl=1
 options hid_apple swap_opt_cmd=1
 
 # regenerate initramfs
-# debian
-#sudo update-initramfs -u
-# arch
-#sudo mkinitcpio -p linux
+sudo update-initramfs -u
+#sudo mkinitcpio -p linux # for kali
 ```
 
 ### Kali Install
