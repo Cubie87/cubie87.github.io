@@ -164,7 +164,7 @@ git remote add origin https://repo/address
 git push --set-upstream origin master
 ```
 
-### LUKS and TPM2 Autounlock
+### LUKS and TPM2 AutoUnlock
 
 ```sh
 sudo apt install tpm2-tools
@@ -178,6 +178,11 @@ sudo systemd-cryptenroll --wipe-slot tpm2 --tpm2-device auto --tpm2-pcrs "1+7" /
 edit `/etc/dracut.conf` so it just contains:
 ```
 add_dracutmodules+=" tpm2-tss crypt "
+```
+
+edit `/etc/dracut.conf.d/tss2.conf
+````
+install_optional_items+=" /usr/lib64/libtss2* /usr/lib64/libfido2.so.* " 
 ```
 
 `/etc/default/grub` and replace that line with:
