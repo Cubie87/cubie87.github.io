@@ -52,20 +52,6 @@ sudo apt update
 sudo apt install gparted vlc obs-studio firefox-nightly firefox-devedition sublime-text 
 ```
 
-- [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
-
-```sh
-# sudo apt install virtualbox
-sudo mkdir -p /var/lib/shim-signed/mok
-sudo openssl req -nodes -new -x509 -newkey rsa:2048 -outform DER -addext "extendedKeyUsage=codeSigning" -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der
-sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
-# sign kernel modules
-sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxdrv.ko
-sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetadp.ko
-sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetflt.ko
-sudo reboot
-```
-
 ### yt-dlp
 
 [Download](https://github.com/yt-dlp/yt-dlp)
@@ -178,6 +164,71 @@ git remote add origin https://repo/address
 git push --set-upstream origin master
 ```
 
+### LUKS and TPM2 Autounlock
+
+```sh
+sudo apt install tpm2-tools
+sudo apt install libtpm2-pkcs11-1
+sudo apt install dracut
+
+# sudo systemd-cryptenroll --tpm2-device=auto /dev/nvme0n1p3
+sudo systemd-cryptenroll --wipe-slot tpm2 --tpm2-device auto --tpm2-pcrs "1+7" /dev/nvme0n1p3
+```
+
+edit `/etc/dracut.conf` so it just contains:
+```
+add_dracutmodules+=" tpm2-tss crypt "
+```
+
+`/etc/default/grub` and replace that line with:
+```
+GRUB_CMDLINE_LINUX="rd.auto rd.luks=1"
+```
+
+`/etc/crypttab` and comment out the line.
+```
+## nvme0n1p3_crypt UUID=****-****-*** none luks,discard
+```
+
+```sh
+dracut -f
+update-grub
+```
+
+Reboot.
+
+
+To delete: 
+```
+sudo systemd-cryptenroll --wipe-slot=tpm2 /dev/nvme0n1p3
+```
+
+helpful command when chrooted if you break the install.
+```
+dracut --regenerate-all --force
+```
+
+
+### Chroot into a device with LUKS using TailsOS
+
+```sh
+sudo fdisk -l
+# /dev/nvme0n1p1: EFI
+# /dev/nvme0n1p2: /boot
+# /dev/nvme0n1p3: / (encrypted)
+
+sudo cryptsetup open /dev/nvme0n1p3 temp-name-here
+
+sudo mount /dev/mapper/temp-name-here /mnt
+cd /mnt
+sudo mount /dev/nvme0n1p2 boot/
+sudo mount -t proc /proc proc/
+sudo mount --rbind /dev dev/
+sudo mount --make-rslave dev/
+sudo mount --rbind /sys sys/
+sudo mount --make-rslave sys/
+sudo chroot .
+```
 
 ### Change Around Mac's God Awful Key Layout
 
