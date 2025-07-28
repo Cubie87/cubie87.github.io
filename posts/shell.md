@@ -1,22 +1,21 @@
 # My Setup and Other Things
 
-I daily windows, so WSL, and am actively working to move to Linux (debian) for my daily driver (laptop).
-
-Current list of issues stopping me from moving to Linux:
- - CAD Program Support (VM Solvable, but input latency issues which are suboptimal but acceptable)
- - AutoHotKey alternative (I utilise hotstrings extensively)
- - Logi Options+ alternative
+~~I daily windows, so WSL, and am actively working to move to Linux (debian) for my daily driver (laptop).~~
 
 I've now moved over to Debian/KDE as my daily driver!
+
+List of issues that were stopping me from moving to Linux:
+ - CAD Program Support (VM solved)
+ - AutoHotKey alternative (.zshrc solved for the most part, moving away from Discord also helped)
+ - Logi Options+ alternative (KDE Plasma has support for thumb-buttons, but does not support rebinding the 3rd button behind the scroll wheel on the MX Anywhere 3)
+
+
 
 ## Basic linux setup
 
 ```sh
 # basic programs that I use
 sudo apt install curl wget vim htop screen sysstat smartmontools ffmpeg git unzip dnsutils glances screenfetch
-# ctf tools
-sudo apt install libimage-exiftool-perl binwalk basez qpdf nmap traceroute wireshark python-is-python3 python3-pip netcat-traditional ncat 
-
 
 # install zsh
 sudo apt install zsh
@@ -41,6 +40,17 @@ sudo update-alternatives --config editor
 git config --global core.editor "vim"
 ```
 
+
+
+### Change Grub Timeout
+Grub's timeout. If >0, requires keyboard to be connected when booting. If =0, doesn't
+```sh
+sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+sudo update-grub
+```
+
+
+
 ### GUI Programs
 Requires external repos/pgp keys that may change.
 - [Sublime Text](https://www.sublimetext.com/docs/linux_repositories.html)
@@ -51,8 +61,14 @@ sudo apt update
 # gui programs that I use
 sudo apt install gparted vlc obs-studio firefox-nightly firefox-devedition sublime-text 
 ```
+- [gqrx](https://github.com/gqrx-sdr/gqrx/releases)
+- [ATLauncher](https://atlauncher.com/downloads)
+- [VSCode](https://code.visualstudio.com/docs/setup/linux)
 
-### yt-dlp
+
+
+
+#### yt-dlp
 
 [Download](https://github.com/yt-dlp/yt-dlp)
 ```sh
@@ -61,18 +77,55 @@ echo '\n\n'alias :yt-dlp=\'/home/$USER/yt-dlp --no-overwrites --merge-output-for
 ```
 
 
-### Change Grub Timeout
-Grub's timeout. If >0, requires keyboard to be connected when booting. If =0, doesn't
+
+#### Virtualbox
+
+[VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
+
 ```sh
-sudo sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
-sudo update-grub
+# sudo apt install virtualbox
+sudo mkdir -p /var/lib/shim-signed/mok
+sudo openssl req -nodes -new -x509 -newkey rsa:2048 -outform DER -addext "extendedKeyUsage=codeSigning" -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der
+sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
+# sign kernel modules
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxdrv.ko
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetadp.ko
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetflt.ko
+# sudo reboot
+# only need to reboot if not also adding video loopback devices below.
 ```
+
+
+#### Get Video Loopback Devices Working
+Need to perform MOK management
+
+```sh
+sudo apt install v4l2loopback-dkms
+sudo openssl req -new -x509 -newkey rsa:2048 -outform DER -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der -nodes -days 36500 -subj "/CN=v4l2ModuleKey/"
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/$(uname -r)/updates/dkms/v4l2loopback.ko
+
+sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
+sudo reboot
+```
+
+At the boot screen:
+- Choose "Enroll MOK"
+- Select "Continue"
+- Choose "Yes"
+- Enter the password you set earlier
+
+```sh
+sudo modprobe v4l2loopback
+```
+
 
 ### Framework Laptop
 
 Use the [debian guide](https://wiki.debian.org/InstallingDebianOn/FrameWork/Laptop13/AMD_7040_Series) first.
 
 REMEMBER to fix display drivers FIRST!!!
+
+
 
 #### KDE Settings to change.
 
@@ -93,6 +146,7 @@ REMEMBER to fix display drivers FIRST!!!
 - Power Management > AC Power: Disable suspend session
 
 
+
 #### Fingerprint Reader
 
 ```sh
@@ -108,63 +162,8 @@ auth            sufficient      pam_fprintd.so
 ```
 
 
-### Get Video Loopback devices working
-Need to perform MOK management
 
-```sh
-sudo apt install v4l2loopback-dkms
-openssl req -new -x509 -newkey rsa:2048 -outform DER -keyout MOK.priv -out MOK.der -nodes -days 36500 -subj "/CN=v4l2ModuleKey/"
-sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /lib/modules/$(uname -r)/updates/dkms/v4l2loopback.ko
-
-sudo mokutil --import MOK.der
-sudo reboot
-```
-
-At the boot screen:
-- Choose "Enroll MOK"
-- Select "Continue"
-- Choose "Yes"
-- Enter the password you set earlier
-
-```sh
-sudo modprobe v4l2loopback
-```
-
-
-### Virtualbox
-
-[VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
-
-```sh
-# sudo apt install virtualbox
-sudo mkdir -p /var/lib/shim-signed/mok
-sudo openssl req -nodes -new -x509 -newkey rsa:2048 -outform DER -addext "extendedKeyUsage=codeSigning" -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der
-sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
-# sign kernel modules
-sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxdrv.ko
-sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetadp.ko
-sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetflt.ko
-sudo reboot
-```
-
-
-### Set up git
-
-```sh
-# install repo
-# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-gh auth login`
-gh auth setup-git`
-```
-
-```sh
-git init
-git pull https://repo/address
-git remote add origin https://repo/address
-git push --set-upstream origin master
-```
-
-### LUKS and TPM2 AutoUnlock
+#### LUKS and TPM2 AutoUnlock
 
 ```sh
 sudo apt install tpm2-tools
@@ -176,12 +175,14 @@ sudo systemd-cryptenroll --wipe-slot tpm2 --tpm2-device auto --tpm2-pcrs "1+7" /
 ```
 
 edit `/etc/dracut.conf` so it just contains:
-```
+
+```sh
 add_dracutmodules+=" tpm2-tss crypt "
 ```
 
 edit `/etc/dracut.conf.d/tss2.conf
-````
+
+```sh
 install_optional_items+=" /usr/lib64/libtss2* /usr/lib64/libfido2.so.* " 
 ```
 
@@ -214,6 +215,7 @@ dracut --regenerate-all --force
 ```
 
 
+
 ### Chroot into a device with LUKS using TailsOS
 
 ```sh
@@ -235,6 +237,24 @@ sudo mount --make-rslave sys/
 sudo chroot .
 ```
 
+
+
+### Set up git
+
+```sh
+# install repo
+# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+gh auth login
+gh auth setup-git
+```
+
+```sh
+git init
+git pull https://repo/address
+git remote add origin https://repo/address
+git push --set-upstream origin master
+```
+
 ### Change Around Mac's God Awful Key Layout
 
 This swaps `fn` with `ctrl`, and swaps `alt` with `meta`. It also changes function keys to default to F1-12 as opposed to brightness/etc.
@@ -252,9 +272,18 @@ sudo update-initramfs -u
 #sudo mkinitcpio -p linux # for kali
 ```
 
+
+
 ### Kali Install
 
 When installing Kali Linux on a MacbookPro12,1 using Rufus, write in GPT, DD mode, not ISO
+
+```sh
+# ctf tools
+sudo apt install libimage-exiftool-perl binwalk basez qpdf nmap traceroute wireshark python-is-python3 python3-pip netcat-traditional ncat 
+```
+
+
 
 ### Samba Share Setup
 
@@ -278,6 +307,8 @@ sudo ufw allow samba
 sudo smbpasswd -a [user]
 ```
 
+
+
 ### Static IP 
 
 ```sh
@@ -293,11 +324,14 @@ iface eno0 inet static
 # write exit
 ```
 
+
+
 ### Python pip fix
 
 ```sh
 sudo mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
 ```
+
 
 
 ### LaTeX Installation
@@ -326,6 +360,8 @@ pip3 install pygments
 #export PATH="$PATH:/home/[USERNAME]/.local/bin"
 pygmentize -V
 ```
+
+
 
 ### Surface Go TPM LUKS
 ```sh
