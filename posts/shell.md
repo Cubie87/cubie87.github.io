@@ -170,8 +170,9 @@ sudo apt install tpm2-tools
 sudo apt install libtpm2-pkcs11-1
 sudo apt install dracut
 
-# sudo systemd-cryptenroll --tpm2-device=auto /dev/nvme0n1p3
-sudo systemd-cryptenroll --wipe-slot tpm2 --tpm2-device auto --tpm2-pcrs "1+7" /dev/nvme0n1p3
+# delete previous tpm settings, set it to 1+7, and require pin
+# https://man.archlinux.org/man/systemd-cryptenroll.1
+sudo systemd-cryptenroll --wipe-slot tpm2 --tpm2-device auto --tpm2-pcrs "1+7" --tpm2-with-pin=yes /dev/nvme0n1p3
 ```
 
 edit `/etc/dracut.conf` so it just contains:
