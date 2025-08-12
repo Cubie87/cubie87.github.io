@@ -154,3 +154,12 @@ gsettings set org.gnome.SessionManager logout-prompt false
   - Only show CPU and Memory, Display style Digits.
 - Tailscale QS
 
+## A 4 Month Retrospective
+
+I've gone back to Win10, albeit a heavily debloated version, but the touch support with Win10 and the OSK is literally unbeatable when compared to Gnome, KDE, and other DEs. I've the variety pack (Gnome/Debian, Gnome/Mobian, KDE/Debian, KDE-Mobile/Debian), and none of them work the way I want it to. 
+
+Alas, back to Win10 it is.
+
+Though, with it primarily being a media consumption device, it functions without issue.
+
+My experience is extremely similar to [this youtube video](https://www.youtube.com/watch?v=17oLtwDfMAg).
