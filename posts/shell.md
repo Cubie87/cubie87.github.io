@@ -391,6 +391,41 @@ Gnome Fractional Scaling
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 ```
 
+## Darwin USB Creation
+
+On mac cause apple hates you
+
+Copy `.dmg` to a mac and open directory in finder. Run `.dmg` and let the volume mount.
+
+```sh
+pkgutil --expand-full “/Volumes/<version>/InstallMacOSX.pkg” OSInstaller
+```
+where `<version>`
+- for For Lion and Mountain Lion: `Install Mac OS X`
+- For Yosemite and El Capitan: `Install OS X`
+- For Sierra: `Install macOS`
+
+1. Open OSInstaller, right click `.pkg` file -> show content package -> Copy `InstallESD.dmg`
+2. Go to Payload -> right click on App installer -> show Package content -> Contents -> SharedSupport, Paste
+3. Payload folder, then copy the `.app` file into Host OS Application folder
+```sh
+sudo /Applications/Install\ [Version].app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ [Version].app
+```
+
+### If that doesn't work
+1. On a handy Mac, grab Lion installer from Apple website here: https://support.apple.com/kb/DL2077?locale=en_GB
+
+2. Open the DMG. Copy the PKG file somewhere, then use The Unarchiver to extract it.
+
+3. In the extracted contents, there's another PKG file called InstallMacOSX.pkg. Right click on that and click "Show Package Contents". There's a DMG in there called InstallESD.dmg. Open that DMG to mount it.
+
+4. Put a USB stick into your Mac and open Disk Utility. I'm on a Mac with High Sierra at the moment, earlier or later versions will look different. Find your USB stick and click the Erase button. Format it with Mac OS Extended format and choose the GUID Partition Map scheme. Give it any label you like.
+
+5. Find your newly formatted USB Stick volume in the Disk Utility, right click on it and press Restore. Tell it to restore from "Mac OS X Install ESD", then press the Restore button.
+
+6. Wait an indeterminable amount of time for the DMG to get restored to the USB Stick. It should then turn into a Lion USB stick and be bootable. Plug it into the Mac you want to install Lion on, reboot it while holding down the Option key and wait for the boot menu to appear. With luck and a following wind, you should see the Lion installer in your bootable image list.
+
+[Credit](https://www.edugeek.net/forums/topic/207160-ok-i-give-up-how-do-i-get-a-lion-into-a-macintosh/)
 
 ## Misc Windows Commands
 
