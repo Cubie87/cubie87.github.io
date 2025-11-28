@@ -391,6 +391,49 @@ Gnome Fractional Scaling
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 ```
 
+## Proxmox PVE DHCP Setup
+
+Credit to [lkiesow](https://weblog.lkiesow.de/20220223-proxmox-test-machine-self-servic/proxmox-server-dhcp.html)
+
+edit `/etc/network/interfaces`
+```
+iface vmbr0 inet static
+        address 192.168.1.157/24
+        gateway 192.168.1.1
+        bridge-ports enp5s0
+        bridge-stp off
+        bridge-fd 0
+```
+Modify into:
+```
+iface vmbr0 inet dhcp
+        bridge-ports enp5s0
+        bridge-stp off
+        bridge-fd 0
+```
+
+Check Hostname
+```sh
+hostname
+$hostname
+```
+Confirm Hostname
+```sh
+hostnamectl set-hostname $hostname
+```
+Confirm the hostname is entered correctly in `/etc/hosts`
+```
+127.0.0.1      localhost.localdomain localhost
+192.168.1.157  $hostname $hostname.proxmox
+```
+Script for DHCP `/etc/dhcp/dhclient-exit-hooks.d/update-etc-hosts`
+```sh
+if ([ $reason = "BOUND" ] || [ $reason = "RENEW" ])
+then
+  sed -i "s/^.*\sproxmox.home.lkiesow.io\s.*$/${new_ip_address} proxmox.home.lkiesow.io proxmox/" /etc/hosts
+fi
+```
+
 ## Darwin USB Creation
 
 On mac cause apple hates you
