@@ -391,7 +391,9 @@ Gnome Fractional Scaling
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 ```
 
-## Proxmox PVE DHCP Setup
+## Proxmox Setup
+
+### DHCP Setup
 
 Credit to [lkiesow](https://weblog.lkiesow.de/20220223-proxmox-test-machine-self-servic/proxmox-server-dhcp.html)
 
@@ -426,13 +428,83 @@ Confirm the hostname is entered correctly in `/etc/hosts`
 127.0.0.1      localhost.localdomain localhost
 192.168.1.157  $hostname $hostname.proxmox
 ```
-Script for DHCP `/etc/dhcp/dhclient-exit-hooks.d/update-etc-hosts`
+Script for DHCP `/etc/dhcp/dhclient-exit-hooks.d/update-etc-hosts.conf`
 ```sh
 if ([ $reason = "BOUND" ] || [ $reason = "RENEW" ])
 then
   sed -i "s/^.*\sproxmox.home.lkiesow.io\s.*$/${new_ip_address} proxmox.home.lkiesow.io proxmox/" /etc/hosts
 fi
 ```
+
+### Disk Wear
+
+Proxmox usually eats drives. Run these to disable.
+
+```sh
+systemctl disable --now pve-ha-crm.service
+systemctl disable --now pve-ha-lrm.service
+systemctl disable --now pvesr.timer
+systemctl disable --now corosync.service 
+```
+
+## PCIe Passthrough
+
+`sudo vim /etc/default/grub`
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
+```
+
+Append this to `/etc/modules`
+```
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd
+```
+
+```sh
+update-initramfs -u -k all
+```
+
+Reboot.
+
+Check if enabled.
+
+```sh
+dmesg | grep IOMMU
+```
+Looking for
+> IOMMU enabled
+
+Good. It is now enabled.
+
+```sh
+lspci -nn
+```
+and note down the vendor and device IDs. eg. 
+```
+01:00.0 SATA controller [0106]: ASMedia Technology Inc. ASM1061/ASM1062 Serial ATA Controller [1b21:0612] (rev 02)
+        Subsystem: ASMedia Technology Inc. Device [1b21:1060]
+```
+we want `1b21:0612`
+
+`vim /etc/modprobe.d/pve-blacklist.conf` and append
+
+```
+options vfio-pci ids=1b21:0612
+```
+
+```sh
+update-initramfs -u -k all
+```
+Reboot
+
+It should now be ready to passthrough.
+
+When passing through, select `Raw Device`, and REMEMBER TO DISABLE ROMBAR. Pls.
+
+![rombar](rombar.png)
+
 
 ## Darwin USB Creation
 
