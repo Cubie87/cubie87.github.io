@@ -308,6 +308,41 @@ sudo ufw allow samba
 sudo smbpasswd -a [user]
 ```
 
+### Samba Client Setup
+Install software to do this
+
+```sh
+sudo apt install autofs cifs-utils smbclient
+```
+
+
+Configure autofs master file to point at auto.smbmedia file
+
+`sudo vim /etc/auto.master`
+and add `/- auto.smbmedia` above `+auto.master`
+
+Add your credentials
+
+`vim ~/.smb.credentials`
+```
+username=username-here
+password=password-here
+```
+and make sure only you can read it `chmod 600 ~/.smb.credentials`
+
+Add relevant files to the `auto.smbmedia` file which we pointed autofs at earlier. One entry per line if adding more than one line.
+
+`sudo vim /etc/auto.smbmedia`
+```sh
+/mnt/remote/${SHARENAME} -fstype=cifs,uid=1000,gid=1000,credentials=/home/${USER}/.smb.credentials,rw ://${IP.ADDRESS}/${SERVER_SHARE_NAME}
+```
+
+Restart autofs and check if it's mounted in `/mnt/remote`
+```sh
+systemctl restart autofs
+```
+
+Credit to [ThatGuyB](https://forum.level1techs.com/t/easy-to-follow-samba-autofs-mount/178658).
 
 
 ### Static IP 
@@ -447,7 +482,7 @@ systemctl disable --now pvesr.timer
 systemctl disable --now corosync.service 
 ```
 
-## PCIe Passthrough
+### PCIe Passthrough
 
 `sudo vim /etc/default/grub`
 ```
