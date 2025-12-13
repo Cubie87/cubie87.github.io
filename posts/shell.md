@@ -463,7 +463,7 @@ Confirm the hostname is entered correctly in `/etc/hosts`
 127.0.0.1      localhost.localdomain localhost
 192.168.1.157  $hostname $hostname.proxmox
 ```
-Script for DHCP `/etc/dhcp/dhclient-exit-hooks.d/update-etc-hosts.conf`
+Script for DHCP `/etc/dhcp/dhclient-exit-hooks.d/update-etc-hosts`
 ```sh
 if ([ $reason = "BOUND" ] || [ $reason = "RENEW" ])
 then
@@ -488,6 +488,8 @@ systemctl disable --now corosync.service
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
 ```
+`sudo update-grub`
+
 
 Append this to `/etc/modules`
 ```
