@@ -17,6 +17,8 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 ## Blog Posts
 
+[2026 - OpenWebRX](posts/2026-openwebrx/openwebrx.md)
+
 [2025 - Thinkpad T430](posts/2025-thinkpad/thinkpad.md)
 
 [2025 - Microsoft Surface Go Setup](posts/2025-surfaceGo/surface.md)
