@@ -113,6 +113,9 @@ This is the waterfall plot from OpenWebRX+. Note the smudges showing signal just
 
 ![waterfall plot with smudges just barely visible showing signals received.](ft8-rx.png)
 
+The message block contains the call signs (in this case, F4DIA), and the grid location they're calling from (in this case, JN36), which is in France.
+
+![Map showing JN36 in France/Swiss](JN36.png)
 
 ## Footnotes, Glossary.
 
