@@ -17,7 +17,8 @@ I will note that a HAM licence allows you to transmit, but is not required if yo
 
 Similar to your car radio, a _Software Defined Radio_ (SDR) lets you tune into different frequencies, but unlike your car radio using physical knobs, an SDR uses software to tune itself. 
 
-The cheapest and (in my circles) most commonly known SDR is the RTL-SDR, which is so incredibly cheap at \~\$70 AUD. For context, others I've seen are the HackRF One, LimeSDR, and AntSDR, which run \~\$500+. Note that the RTL-SDR can only receive, whereas the others above can also transmit.
+The cheapest and (in my circles) most commonly known SDR is the RTL-SDR, which is so incredibly cheap at ~$70 AUD.
+For context, others I've seen are the HackRF One, LimeSDR, and AntSDR, which run ~500+. Note that the RTL-SDR can only receive, whereas the others above can also transmit.
 
 Furthermore, the RTL-SDR can listen from around 500kHz up to 1.7 GHz, which is incredible given the price. However, you do need an antenna that is ideal for that frequency range, or different antennas for each different range.
 
