@@ -1,14 +1,16 @@
 # Home
 
-Hello! Welcome to my little corner of the internet. This is a little test website/blog to document my random thoughts/experiments, both for your viewing/enjoyment, but also for me to look back on in the future.
+Hello! Welcome to my little corner of the internet. This is a little test website/blog to document my random thoughts/experiments, both for your viewing/enjoyment, but also for me to look back on for documentation from my past self.
 
-I'm a university student studying _nerd_ subjects, and have an interest in such.
+I'm a university graduate of _nerd_ subjects, and have an interest in such.
 
 My current preferred shell is [zsh on wsl](posts/shell.md) on a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md).
 
 I [have mild regrets](posts/s23bloat.md) using a Samsung S23.
 
-I'm a datahoarder, with a 18TB storage server running on TrueNAS Scale (5x4TB raidz1 + 2x2TB mirror).
+I'm a datahoarder, with a 18TB storage server running on TrueNAS Scale (2x16TB mirror + 2x4TB mirror). This is replicated live to an off-site location for redundancy (2x4TB mirror).
+
+I am a HAM since May 2025 and am still exploring what I want to do there.
 
 I run a compute server which hosts [Pandora](posts/pandora.md), PiHole, a vpn node, and occasionally minecraft servers.
 
@@ -17,7 +19,7 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 ## Blog Posts
 
-[2026 - OpenWebRX](posts/2026-openwebrx/openwebrx.md)
+[2026 - Receiving Radio from Around the World](posts/2026-openwebrx/openwebrx.md)
 
 [2025 - Thinkpad T430](posts/2025-thinkpad/thinkpad.md)
 
