@@ -118,6 +118,10 @@ The message block contains the call signs (in this case, F4DIA), and the grid lo
 
 ![Map showing JN36 in France/Swiss](JN36.png)
 
+And here are all the contacts I've received over a few days. Note that some are false positive readings (eg, middle of the ocean) and likely picking up garbled data and/or noise that looks like a signal.
+
+![Map of all contacts received](contacts.png)
+
 ## Footnotes, Glossary.
 
 I suppose it's time to build a better antenna to receive on more HAM bands. I'm still impressed that I was able to receive signals from, eg, France, using ~$80 worth of kit (computer not included).
