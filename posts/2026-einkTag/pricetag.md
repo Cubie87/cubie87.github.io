@@ -23,7 +23,7 @@ Using the library by jcyfkimi, I was able to get basic patterns to display on th
 
 That library also had a bitmap image of the waveshare logo, which was interesting. In theory that means that you can draw any arbitrary images on the display (as opposed to having to programmatically define shapes, etc), but needed more understanding. 
 
-The bitmap is a list of hex values, specifically 5624 of them. Given that this e-ink screen had exactly 8 times pixels at 44992, that meant that the hex values each represented 8 pixels, at least in theory. 
+The bitmap is a list of hex values, specifically 5624 of them. Given that this e-ink screen had exactly 8 times that many pixels at 44992, that meant that the hex values each represented 8 pixels, at least in theory. 
 
 ## Calibration Patterns
 
@@ -55,6 +55,8 @@ I wasn't able to get anywhere with the above pattern, so decided to go for a mor
 ```
 and this gave the following "calibration" map.
 
+### Calibration Map
+
 ![a proper calibration map](calibration.jpg)
 
 I sat on this for a while, as I wasn't sure what to make of it. On one hand, the shading isn't consistent, but on the other, surely something could be made of it. 
@@ -85,8 +87,17 @@ This was extremely convenient, as it meant that each row of pixels was simply gr
 
 ![a drawing of how the bitmap works](pixel-layout.png)
 
+Looking at the pricetag vertically, per the calibration image. The display has 296 pixels vertically, so there are 296 rows of hex values.
+
+Each hex value encompasses 8 pixels, so at 152 pixels across, there are 19 hex values per row.
+
+
 After a quick LLM conversation to get a functional python script, I was able to draw custom art on the display. It takes in a 296 pixel tall by 152 pixel wide image, and converts it into a list of hex values that can be uploaded through the arduino library.
 
 ![rick rolled hehe](rick.jpg)
+
+
+
+
 
 The code for this [can be found here](https://github.com/Cubie87/sesimagotag).
