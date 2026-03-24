@@ -4,7 +4,7 @@ Hello! Welcome to my little corner of the internet. This is a little test websit
 
 I'm a university graduate of _nerd_ subjects, and have an interest in such.
 
-My current preferred shell is [zsh on wsl](posts/shell.md) on a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md).
+My current preferred shell is [zsh on debian/kdeplasma](posts/shell.md) on a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md).
 
 I [have mild regrets](posts/s23bloat.md) using a Samsung S23.
 
@@ -18,6 +18,8 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 
 ## Blog Posts
+
+[2026 - "Reverse Engineering" a Supermarket E-ink Pricetag](posts/2026-einkTag/pricetag.md)
 
 [2026 - Receiving Radio from Around the World](posts/2026-openwebrx/openwebrx.md)
 
