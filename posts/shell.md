@@ -5,7 +5,7 @@
 I've now moved over to Debian/KDE as my daily driver!
 
 List of issues that were stopping me from moving to Linux:
- - CAD Program Support (VM solved)
+ - CAD Program Support (VM solved, now web OnShape solved)
  - AutoHotKey alternative (.zshrc solved for the most part, moving away from Discord also helped)
  - Logi Options+ alternative (KDE Plasma has support for thumb-buttons, but does not support rebinding the 3rd button behind the scroll wheel on the MX Anywhere 3)
 
@@ -38,6 +38,11 @@ chsh -s $(which zsh)
 sudo update-alternatives --config editor
 # vim default git editor
 git config --global core.editor "vim"
+
+
+# set up NTP syncing for system clock purposes
+sudo apt install systemd-timesyncd
+sudo systemctl enable systemd-timesyncd
 ```
 
 
@@ -96,29 +101,6 @@ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MO
 ```
 
 
-#### Get Video Loopback Devices Working
-Need to perform MOK management
-
-```sh
-sudo apt install v4l2loopback-dkms
-sudo openssl req -new -x509 -newkey rsa:2048 -outform DER -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der -nodes -days 36500 -subj "/CN=v4l2ModuleKey/"
-sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/$(uname -r)/updates/dkms/v4l2loopback.ko
-
-sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
-sudo reboot
-```
-
-At the boot screen:
-- Choose "Enroll MOK"
-- Select "Continue"
-- Choose "Yes"
-- Enter the password you set earlier
-
-```sh
-sudo modprobe v4l2loopback
-```
-
-
 ### Framework Laptop
 
 Use the [debian guide](https://wiki.debian.org/InstallingDebianOn/FrameWork/Laptop13/AMD_7040_Series) first.
@@ -166,9 +148,7 @@ auth            sufficient      pam_fprintd.so
 #### LUKS and TPM2 AutoUnlock
 
 ```sh
-sudo apt install tpm2-tools
-sudo apt install libtpm2-pkcs11-1
-sudo apt install dracut
+sudo apt install tpm2-tools libtpm2-pkcs11-1 dracut
 
 # delete previous tpm settings, set it to 1+7, and require pin
 # https://man.archlinux.org/man/systemd-cryptenroll.1
@@ -202,7 +182,14 @@ dracut -f
 update-grub
 ```
 
-Reboot.
+Reboot. It should now be implemented.
+
+Remember to use 
+
+```sh
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove --purge -y && sudo dracut --regenerate-all --force && sudo update-grub
+```
+to update the system from now on.
 
 
 To delete: 
@@ -214,7 +201,6 @@ helpful command when chrooted if you break the install.
 ```
 dracut --regenerate-all --force
 ```
-
 
 
 ### Chroot into a device with LUKS using TailsOS
@@ -397,35 +383,6 @@ pip3 install pygments
 pygmentize -V
 ```
 
-
-
-### Surface Go TPM LUKS
-```sh
-#!/bin/bash
-
-#install needed packages
-apt-get -y install clevis clevis-tpm2 clevis-luks clevis-initramfs initramfs-tools tss2
-
-#proceed
-echo -n Enter LUKS password:
-read -s LUKSKEY
-echo ""
-
-clevis luks bind -d /dev/nvme0n1p3 tpm2 '{"pcr_bank":"sha256"}' <<< "$LUKSKEY"
-
-update-initramfs -u -k all
-
-#check
-clevis luks list -d /dev/nvme0n1p3
-
-#delete example; -s is one of the slots reported by the previous command
-#clevis luks unbind -d /dev/nvme0n1p3 -s 1 tpm2
-```
-Gnome Fractional Scaling
-```sh
-gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
-```
-
 ## Proxmox Setup
 
 ### DHCP Setup
@@ -542,6 +499,57 @@ When passing through, select `Raw Device`, and REMEMBER TO DISABLE ROMBAR. Pls.
 
 ![rombar](rombar.png)
 
+
+
+### Get Video Loopback Devices Working (Deprecated)
+Need to perform MOK management
+
+```sh
+sudo apt install v4l2loopback-dkms
+sudo openssl req -new -x509 -newkey rsa:2048 -outform DER -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der -nodes -days 36500 -subj "/CN=v4l2ModuleKey/"
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der /lib/modules/$(uname -r)/updates/dkms/v4l2loopback.ko
+
+sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
+sudo reboot
+```
+
+At the boot screen:
+- Choose "Enroll MOK"
+- Select "Continue"
+- Choose "Yes"
+- Enter the password you set earlier
+
+```sh
+sudo modprobe v4l2loopback
+```
+
+
+### Surface Go TPM LUKS (Deprecated)
+```sh
+#!/bin/bash
+
+#install needed packages
+apt-get -y install clevis clevis-tpm2 clevis-luks clevis-initramfs initramfs-tools tss2
+
+#proceed
+echo -n Enter LUKS password:
+read -s LUKSKEY
+echo ""
+
+clevis luks bind -d /dev/nvme0n1p3 tpm2 '{"pcr_bank":"sha256"}' <<< "$LUKSKEY"
+
+update-initramfs -u -k all
+
+#check
+clevis luks list -d /dev/nvme0n1p3
+
+#delete example; -s is one of the slots reported by the previous command
+#clevis luks unbind -d /dev/nvme0n1p3 -s 1 tpm2
+```
+Gnome Fractional Scaling
+```sh
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+```
 
 ## Darwin USB Creation
 
