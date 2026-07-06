@@ -19,19 +19,21 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 ## Blog Posts
 
+[2026 - Bringing a Dead Raspberry Pi Back to Life](posts/2026-pi3b-repair/pi-repair.md)
+
 [2026 - "Reverse Engineering" a Supermarket E-ink Pricetag](posts/2026-einkTag/pricetag.md)
 
 [2026 - Receiving Radio from Around the World](posts/2026-openwebrx/openwebrx.md)
 
-[2025 - Pwnagotchi](posts/2025-pwnagotchi/pwnagotchi.md)
+[2025 - A Portable Wifi Hacking Device](posts/2025-pwnagotchi/pwnagotchi.md)
 
-[2025 - Thinkpad T430](posts/2025-thinkpad/thinkpad.md)
+[2025 - Replacing a Lenovo Charging Port with USB C](posts/2025-thinkpad/thinkpad.md)
 
 [2025 - Microsoft Surface Go Setup](posts/2025-surfaceGo/surface.md)
 
 [2024 - Dell Inspiron 5510 Repair](posts/2024-5510/repair.md)
 
-[2024 - Macbook Pro A1708 Repair](posts/2024-a1708/repair.md)
+[2024 - Macbook Pro A1708 Revival](posts/2024-a1708/repair.md)
 
 [2024 - Unifi AP Flashing (OpenWRT)](posts/2024-unifi/unifi.md)
 
