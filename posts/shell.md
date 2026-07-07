@@ -43,6 +43,9 @@ git config --global core.editor "vim"
 # set up NTP syncing for system clock purposes
 sudo apt install systemd-timesyncd
 sudo systemctl enable systemd-timesyncd
+
+# enable bluetooth if it's not already enabled
+sudo systemctl enable bluetooth
 ```
 
 
@@ -161,7 +164,7 @@ edit `/etc/dracut.conf` so it just contains:
 add_dracutmodules+=" tpm2-tss crypt "
 ```
 
-edit `/etc/dracut.conf.d/tss2.conf
+edit `/etc/dracut.conf.d/tss2.conf`
 
 ```sh
 install_optional_items+=" /usr/lib64/libtss2* /usr/lib64/libfido2.so.* " 

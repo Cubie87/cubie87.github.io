@@ -1,21 +1,18 @@
 # Home
 
-Hello! Welcome to my little corner of the internet. This is a little test website/blog to document my random thoughts/experiments, both for your viewing/enjoyment, but also for me to look back on for documentation from my past self.
+Hello! Welcome to my little corner of the internet. This is a little aggregation of pages to document my random projects/experiments, both for public viewing/enjoyment, but also for me to look back on for documentation from my past self.
 
-I'm a university graduate of _nerd_ subjects, and have an interest in such.
+I'm a graduate of _nerd_ subjects, and have an interest in such.
 
-My current preferred shell is [zsh on debian/kdeplasma](posts/shell.md) on a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md).
+My current preferred shell and general setup is [zsh on debian/kdeplasma](posts/shell.md) on a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md).
 
-I [have mild regrets](posts/s23bloat.md) using a Samsung S23.
+I [have mild issues with the preinstalled softare](posts/s23bloat.md) on a Samsung S23.
 
-I'm a datahoarder, with a 18TB storage server running on TrueNAS Scale (2x16TB mirror + 2x4TB mirror). This is replicated live to an off-site location for redundancy (2x4TB mirror).
+I'm a datahoarder, with a 18TB storage server (2x16TB mirror + 2x4TB mirror). This is replicated live to an off-site location for redundancy (2x4TB mirror).
 
-I am a HAM since May 2025 and am still exploring what I want to do there.
+I am a HAM Radio Operator since May 2025 and am still exploring what I want to do there.
 
-I run a compute server which hosts [Pandora](posts/pandora.md), PiHole, a vpn node, and occasionally minecraft servers.
-
-I've also written a very basic, poorly implemented, [Rocket Flight Computer](https://github.com/Cubie87/L2RocketSoftware) using the Arduino IDE on a Teensy board to log data for a Tripoli Level 2 Certification Flight. 
-
+I run a compute server which hosts [Pandora](posts/pandora.md), DNS sinkhole, a personal VPN mesh network, and occasionally minecraft servers.
 
 ## Blog Posts
 
@@ -25,7 +22,7 @@ I've also written a very basic, poorly implemented, [Rocket Flight Computer](htt
 
 [2026 - Receiving Radio from Around the World](posts/2026-openwebrx/openwebrx.md)
 
-[2025 - A Portable Wifi Hacking Device](posts/2025-pwnagotchi/pwnagotchi.md)
+[2025 - Making A Portable Wifi Hacking Device](posts/2025-pwnagotchi/pwnagotchi.md)
 
 [2025 - Replacing a Lenovo Charging Port with USB C](posts/2025-thinkpad/thinkpad.md)
 
