@@ -1,5 +1,7 @@
 # My Setup and Other Things
 
+This page is essentially a quick reference guide for me when I set up new computers to ensure that I have a consistent and familiar experience across devices. The focus is on Debian, but can be adapted for other flavours as neededc.
+
 ~~I daily windows, so WSL, and am actively working to move to Linux (debian) for my daily driver (laptop).~~
 
 I've now moved over to Debian/KDE as my daily driver!
@@ -15,9 +17,13 @@ List of issues that were stopping me from moving to Linux:
 
 ```sh
 # basic programs that I use
-sudo apt install curl wget vim htop screen sysstat smartmontools ffmpeg git unzip dnsutils glances screenfetch
+sudo apt install curl wget vim htop screen sysstat smartmontools ffmpeg git unzip dnsutils glances screenfetch btop
 
-# install zsh
+# set up NTP syncing for the system clock
+sudo apt install systemd-timesyncd
+sudo systemctl enable systemd-timesyncd
+
+# install zsh and customise to my preference
 sudo apt install zsh
 # install oh-my-zsh for customisation
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -38,11 +44,6 @@ chsh -s $(which zsh)
 sudo update-alternatives --config editor
 # vim default git editor
 git config --global core.editor "vim"
-
-
-# set up NTP syncing for system clock purposes
-sudo apt install systemd-timesyncd
-sudo systemctl enable systemd-timesyncd
 
 # enable bluetooth if it's not already enabled
 sudo systemctl enable bluetooth
@@ -72,6 +73,12 @@ sudo apt install gparted vlc obs-studio firefox-nightly firefox-devedition subli
 - [gqrx](https://github.com/gqrx-sdr/gqrx/releases)
 - [ATLauncher](https://atlauncher.com/downloads)
 - [VSCode](https://code.visualstudio.com/docs/setup/linux)
+
+
+Orca Slicer
+```sh
+sudo apt install libwebkit2gtk-4.1-dev
+```
 
 
 
@@ -181,8 +188,8 @@ GRUB_CMDLINE_LINUX="rd.auto rd.luks=1"
 ```
 
 ```sh
-dracut -f
-update-grub
+sudo dracut -f
+sudo update-grub
 ```
 
 Reboot. It should now be implemented.
@@ -196,12 +203,12 @@ to update the system from now on.
 
 
 To delete: 
-```
+```sh
 sudo systemd-cryptenroll --wipe-slot=tpm2 /dev/nvme0n1p3
 ```
 
 helpful command when chrooted if you break the install.
-```
+```sh
 dracut --regenerate-all --force
 ```
 
@@ -245,7 +252,7 @@ git remote add origin https://repo/address
 git push --set-upstream origin master
 ```
 
-### Change Around Mac's God Awful Key Layout
+### Change Around Mac's Awful Key Layout
 
 This swaps `fn` with `ctrl`, and swaps `alt` with `meta`. It also changes function keys to default to F1-12 as opposed to brightness/etc.
 
