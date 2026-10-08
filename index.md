@@ -2,17 +2,17 @@
 
 Hello! This is a little collection of pages to document my random projects/experiments.
 
-I'm a graduate of _nerd_ subjects, and have an interest in such.
+I'm a graduate of technical subjects, and have an interest in such.
 
-My current preferred shell and general setup is [zsh on debian/kdeplasma](posts/shell.md) on a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md).
+My current preferred shell and general setup is [Debian Linux with KDE Plasma with zsh](posts/shell.md) on a [Framework Laptop](posts/frameworkLaptop/frameworkLaptop.md).
 
-I [have removed a lot of preinstalled softare](posts/s23bloat.md) on a Samsung S23.
+I [have removed a lot of preinstalled softare](posts/s23bloat.md) on my Samsung S23.
 
 I'm a datahoarder, with a 18TB storage server (2x16TB mirror + 2x4TB mirror). This is replicated to an off-site location for redundancy (2x4TB mirror).
 
 I am a HAM Radio Operator since May 2025 and am exploring various radio wireless transmission technologies and adjacent projects.
 
-I run a server which hosts [Pandora, a discord bot](posts/pandora.md), LAN DNS sinkhole, a personal VPN mesh network, and occasionally minecraft servers. Sometimes various miscellaneous projects are also hosted there.
+I run local servers that hosts [Pandora, a discord bot](posts/pandora.md), a LAN DNS sinkhole, a personal VPN mesh network, and occasionally minecraft servers. Sometimes various miscellaneous projects are also hosted there.
 
 ## Blog Posts
 
