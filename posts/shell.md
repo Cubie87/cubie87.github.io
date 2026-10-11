@@ -107,7 +107,6 @@ sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MO
 sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetadp.ko
 sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 ./MOK.priv ./MOK.der /usr/lib/modules/6.1.0-37-amd64/misc/vboxnetflt.ko
 # sudo reboot
-# only need to reboot if not also adding video loopback devices below.
 ```
 
 
@@ -511,7 +510,99 @@ When passing through, select `Raw Device`, and REMEMBER TO DISABLE ROMBAR. Pls.
 
 
 
-### Get Video Loopback Devices Working (Deprecated)
+## Raspberry Pi with Hotspot
+
+When using both built in wifi (in client mode, wlan0), and a USB Wifi dongle (in hotspot mode, wlan1)
+
+### udev rules
+
+`sudo vim /etc/udev/rules.d/10-network.rules`
+```ini
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="de:ad:be:ef:00:11", NAME="wlan0"
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:11:22:33:44:55", NAME="wlan1"
+```
+
+Reboot
+
+### Hotspot Setup
+
+
+```sh
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove --purge -y
+
+ip a
+# note down the interface name, eg, wlan0, enx78897478343, etc
+
+# make a hotspot
+sudo nmcli device wifi [HOTSPOT CONFIG NAME] ssid [SSID HERE] password [PASSWORD HERE] ifname wlan1 channel [1-11] band bg
+# bg = 2.4GHz, if you want 5GHz use "a" instead of "bg"
+
+sudo nmcli connection modify [HOTSPOT CONFIG NAME] 802-11-wireless-security.pmf 1
+# run as needed if NetworkManager is requiring PMF, but most drivers don't initialise this when using AP mode
+
+nmcli connection # list connections. Note down the hotspot UUID
+nmcli connection show [UUID HERE]
+
+sudo nmcli connection modify [UUID HERE] connection.autoconnect yes
+# set it to autoconnect
+sudo nmcli radio wifi on
+sudo nmcli device connect wlan1
+```
+
+### Deconflict client interface
+
+This gets a bit complicated so I'll give examples
+
+```sh
+nmcli connection # list connections. Note down the UUIDs of home network and hotspot network
+#Home                e55394b9-f916-49ff-ae1a-899ab304372b  wifi      wlan0   
+#netplan-wlan0-Home  bb4584e1-ec04-4132-8a95-47b96cece360  wifi      wlan1   
+
+# but what we want is
+#Home                e55394b9-f916-49ff-ae1a-899ab304372b  wifi      wlan0   
+#Hotspot             964c1e33-ecb1-4cb1-9f7e-edc105c0f2bb  wifi      wlan1   
+
+
+# set up a nmcli connection to your home/primary/host network on wlan0
+sudo nmcli device wifi connect "HOME SSID" password "PASSWORD" ifname wlan0
+# connect to the pi over whichever is wlan0 on the pi
+
+# delete the netplan connection occupying wlan1
+sudo nmcli connection delete bb4584e1-ec04-4132-8a95-47b96cece360
+
+ip a
+# wlan1 should now be dormant
+sudo nmcli device connect wlan1
+
+
+nmcli connection
+# hopefully this is what it says
+#Home                e55394b9-f916-49ff-ae1a-899ab304372b  wifi      wlan0   
+#Hotspot             964c1e33-ecb1-4cb1-9f7e-edc105c0f2bb  wifi      wlan1   
+```
+
+### Autostart on boot
+
+Now we just need something to run `nmcli device connect wlan1` on startup.
+
+`sudo vim /etc/systemd/system/hotspot.service`
+```ini
+[Unit]
+Description=Hotspot Network Startup Script
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/nmcli device connect wlan1
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+## Get Video Loopback Devices Working (Deprecated)
 Need to perform MOK management
 
 ```sh
