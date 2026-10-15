@@ -47,6 +47,9 @@ git config --global core.editor "vim"
 
 # enable bluetooth if it's not already enabled
 sudo systemctl enable bluetooth
+
+# give user permissions to read/write to serial devices
+sud usermod -aG dialout
 ```
 
 
