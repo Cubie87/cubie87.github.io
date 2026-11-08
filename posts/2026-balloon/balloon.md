@@ -10,8 +10,6 @@ The most interesting piece of information that is transmitted is the radiosonde'
 
 As the sondes are designed to be disposable, there is not an effort by the BOM to recover used sondes. However, since they broadcast their exact location, radio hobbyists will occasionally drive out and recover them, as a sort of geocaching style scavanger hunt.
 
-In that instance, it could be considered the taking of abandoned government property. Technically correct is sometimes the most fun correct.
-
 By the way, there is an excellent website [Sondehub](https://sondehub.org/) that aggregates data from users to track radiosondes around the world. This is similar to how websites like flightradar24 and adsb.fi work to track planes, relying on geographically diverse crowdsourced receivers to upload and aggregate data.
 
 ## Hunting
@@ -32,7 +30,7 @@ The electronics contained within are actually fascinating. It has an STM32 micro
 
 ![a disassembled radiosonde showing the paper, then foam case, then the pcb](sonde-disassembled.jpeg)
 
-I'm aware of at least one program that allows the sonde to be reprogrammed for various usecases, called [rs41ng](https://github.com/mikaelnousiainen/RS41ng), and is an avenue of exploration I'm still investigating. However, this being my first sonde recovery, I am tempted to leave the software as is and retain it as a display item. 
+I'm aware of at least one program that allows the sonde to be reprogrammed for various usecases, called [rs41ng](https://github.com/mikaelnousiainen/RS41ng), and was the avenue of exploration I ended up diving into. As the STM32 is a common microcontroller, and the communication protocols are straightforward (UART GPS, SPI or I2C for others, etc) (think, a production ready arduino), combined with the ability for the radio to transmit across a wide range of frequencies (covering both LIPD/ISM bands (notably 433MHz and 915MHz in Australia)), it allows for various functionality such as a high accuracy temperature and humidity monitor. Or a foxhunt beacon. Or a test platform for decoding Horus FSK telemetry. But that may end up being another project/writeup another time.
 
 
 First successful recovery of weather balloon and payload! Here's hoping for more in the future.
